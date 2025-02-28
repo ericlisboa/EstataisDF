@@ -687,3 +687,6 @@ with st.expander("Ver detalhes de rentabilidade por estrutura de governança"):
         use_container_width=True
     )
     
+# Botão para voltar à página inicial
+if st.button("Voltar à Página Inicial"):
+    st.switch_page("Início.py")

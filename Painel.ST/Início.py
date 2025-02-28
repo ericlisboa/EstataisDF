@@ -64,25 +64,34 @@ base_path = r"C:\Users\Eric\OneDrive\Estudos\RBCIP\Estatais\Dashboard\Arquivos V
 
 # Adicionar logomarcas no sidebar
 with st.sidebar:
+    
+    # Adicionar título centralizado
         
     # Caminho para as imagens das logomarcas
     logo_rbcip_path = os.path.join(base_path, "logorbcip.png")
     logo_fap_path = os.path.join(base_path, "logofap.png")
-        
-    # Verificar e exibir a logo da FAP
-    if os.path.exists(logo_fap_path):
-        st.image(logo_fap_path, width=200, caption="")
-    else:
-        st.warning("Logo FAP-DF não encontrada")
     
-    # Adicionar um pequeno espaço entre as logos
-    st.markdown("<br>", unsafe_allow_html=True)
+    # Criar colunas para centralizar as imagens - coluna central maior que as laterais
+    col1, col2, col3 = st.columns([1, 7, 1])
     
-    # Verificar e exibir a logo da RBCIP
+    # Verificar e exibir a logo da RBCIP na coluna central
     if os.path.exists(logo_rbcip_path):
-        st.image(logo_rbcip_path, width=200, caption="")
+        with col2:
+            st.image(logo_rbcip_path, width=300)
     else:
         st.warning("Logo RBCIP não encontrada")
+    
+    # Adicionar um espaço maior entre as logos
+    st.markdown("<br><br><br><br>", unsafe_allow_html=True)
+    
+        # Verificar e exibir a logo da FAP na coluna central
+    if os.path.exists(logo_fap_path):
+        with col2:
+            st.image(logo_fap_path, width=300)
+    else:
+        st.warning("Logo FAP-DF não encontrada")
+
+
 
 # Caminho para a imagem de fundo
 bg_image_path = os.path.join(base_path, "background.jpg")
@@ -105,7 +114,7 @@ As informações apresentadas foram extraídas de fontes oficiais, incluindo dec
 
 Este estudo é resultado do trabalho da Rede Brasileira de Certificação, Pesquisa e Inovação (RBCIP), com o apoio da Fundação de Apoio à Pesquisa do Distrito Federal (FAP-DF) e do próprio Governo do Distrito Federal. A iniciativa reforça o compromisso dessas instituições com a transparência e a gestão baseada em dados, fornecendo insumos técnicos para subsidiar decisões estratégicas sobre o setor público.
 
-Para viabilizar uma análise aprofundada, o painel inclui gráficos interativos e a possibilidade de download dos dados, facilitando o acesso às informações para pesquisadores, gestores públicos e demais interessados. Dessa forma, busca-se estimular discussões qualificadas sobre o desempenho e a gestão das estatais distritais, promovendo o aprimoramento das políticas públicas e o uso eficiente dos recursos do estado.
+Para viabilizar uma análise aprofundada, o painel inclui gráficos e tabelas interativas, facilitando o acesso às informações para pesquisadores, gestores públicos e demais interessados. Dessa forma, busca-se estimular discussões qualificadas sobre o desempenho e a gestão das estatais distritais, promovendo o aprimoramento das políticas públicas e o uso eficiente dos recursos do Distrito Federal.
 
 """
 st.markdown(introducao)
