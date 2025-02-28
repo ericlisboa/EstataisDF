@@ -62,6 +62,28 @@ st.set_page_config(
 # Caminho base para a pasta do projeto
 base_path = r"C:\Users\Eric\OneDrive\Estudos\RBCIP\Estatais\Dashboard\Arquivos VS Code\Painel.ST"
 
+# Adicionar logomarcas no sidebar
+with st.sidebar:
+        
+    # Caminho para as imagens das logomarcas
+    logo_rbcip_path = os.path.join(base_path, "logorbcip.png")
+    logo_fap_path = os.path.join(base_path, "logofap.png")
+        
+    # Verificar e exibir a logo da FAP
+    if os.path.exists(logo_fap_path):
+        st.image(logo_fap_path, width=200, caption="")
+    else:
+        st.warning("Logo FAP-DF não encontrada")
+    
+    # Adicionar um pequeno espaço entre as logos
+    st.markdown("<br>", unsafe_allow_html=True)
+    
+    # Verificar e exibir a logo da RBCIP
+    if os.path.exists(logo_rbcip_path):
+        st.image(logo_rbcip_path, width=200, caption="")
+    else:
+        st.warning("Logo RBCIP não encontrada")
+
 # Caminho para a imagem de fundo
 bg_image_path = os.path.join(base_path, "background.jpg")
 
