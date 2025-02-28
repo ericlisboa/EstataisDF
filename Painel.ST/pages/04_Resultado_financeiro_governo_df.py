@@ -8,9 +8,12 @@ import base64
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Load the dataset
-file_path = r"C:\Users\Eric\OneDrive\Estudos\RBCIP\Estatais\Dashboard\Arquivos VS Code\BD_Completo_Nacional_Formatado.csv"
+# Caminho relativo ao arquivo CSV
+file_path = '../BD_Completo_Nacional_Formatado.csv'
+
+# Carregando o arquivo CSV no Pandas DataFrame
 df = pd.read_csv(file_path)
+
 
 # Configurações da página
 st.set_page_config(
