@@ -10,7 +10,7 @@ import seaborn as sns
 import io
 
 # Caminho relativo ao arquivo CSV
-file_path = '../BD_Completo_Nacional_Formatado.csv'
+file_path = 'BD_Completo_Nacional_Formatado.csv'
 
 # Carregando o arquivo CSV no Pandas DataFrame
 df = pd.read_csv(file_path)
