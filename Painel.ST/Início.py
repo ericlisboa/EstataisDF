@@ -94,7 +94,7 @@ with st.sidebar:
 
 
 # Caminho para a imagem de fundo
-bg_image_path = os.path.join(base_path, "background.jpg")
+bg_image_path = os.path.join(base_path, "Background.jpg")
 
 # Verificar se a imagem existe antes de tentar definir o fundo
 if os.path.exists(bg_image_path):
