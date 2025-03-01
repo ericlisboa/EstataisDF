@@ -60,7 +60,7 @@ st.set_page_config(
 )
 
 # Caminho base para a pasta do projeto
-base_path = r"C:\Users\Eric\OneDrive\Estudos\RBCIP\Estatais\Dashboard\Arquivos VS Code\Painel.ST"
+base_path = os.path.dirname(__file__)
 
 # Adicionar logomarcas no sidebar
 with st.sidebar:
