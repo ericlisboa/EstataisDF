@@ -47,6 +47,34 @@ def set_background(image_path):
         padding: 2rem;
         border-radius: 10px;
     }}
+    
+    /* Melhorias para dispositivos móveis */
+    @media (max-width: 768px) {{
+        .main .block-container {{
+            padding: 1rem;
+        }}
+        
+        /* Ajuste para botões em telas pequenas */
+        .stButton>button {{
+            width: 100%;
+            margin-bottom: 10px;
+        }}
+        
+        /* Reduzir tamanho do título em dispositivos móveis */
+        h1 {{
+            font-size: 1.8rem !important;
+        }}
+        
+        h2 {{
+            font-size: 1.5rem !important;
+        }}
+        
+        /* Garantir que a sidebar não sobrepõe o conteúdo quando aberta */
+        [data-testid="stSidebar"] {{
+            min-width: 0px !important;
+            max-width: 300px !important;
+        }}
+    }}
     </style>
     """
     st.markdown(page_bg_img, unsafe_allow_html=True)
@@ -56,7 +84,7 @@ st.set_page_config(
     page_title="Estatais Distritais",
     page_icon="📈",  # Alterado o ícone para gráfico de linha
     layout="wide",
-    initial_sidebar_state="expanded"
+    initial_sidebar_state="collapsed"
 )
 
 # Caminho base para a pasta do projeto
