@@ -2,6 +2,11 @@ import streamlit as st
 import os
 import base64
 
+with open(pdf_path, "rb") as f:
+    base64_pdf = base64.b64encode(f.read()).decode('utf-8')
+    href = f'<a href="data:application/pdf;base64,{base64_pdf}" target="_blank" style="text-decoration: none;"><button style="background-color: #ff4b4b; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">📂 Abrir em tela cheia (Nova Aba)</button></a>'
+    st.markdown(href, unsafe_allow_html=True)
+
 # Configuração da página para ocupar a tela toda
 st.set_page_config(page_title="Visualizar Boletim", layout="wide")
 
