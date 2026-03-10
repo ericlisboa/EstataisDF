@@ -133,14 +133,19 @@ else:
 
 # Código para PDF Boletim das Estatais Distritais
 def display_pdf(file_path):
-    # Lendo o arquivo PDF
     with open(file_path, "rb") as f:
         base64_pdf = base64.b64encode(f.read()).decode('utf-8')
     
-    # Criando o iframe para exibição
-    pdf_display = f'<iframe src="data:application/pdf;base64,{base64_pdf}" width="100%" height="800" type="application/pdf"></iframe>'
-    
-    # Exibindo no Streamlit
+    # Criando o objeto de dados PDF
+    pdf_display = f"""
+        <embed
+            src="data:application/pdf;base64,{base64_pdf}"
+            width="100%"
+            height="1000"
+            type="application/pdf"
+            style="border: none;"
+        >
+    """
     st.markdown(pdf_display, unsafe_allow_html=True)
 
 # Título e introdução
