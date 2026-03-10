@@ -131,6 +131,18 @@ if os.path.exists(bg_image_path):
 else:
     st.warning("Imagem de fundo não encontrada. Verifique se o arquivo 'background.jpg' existe no diretório correto.")
 
+# Código para PDF Boletim das Estatais Distritais
+def display_pdf(file_path):
+    # Lendo o arquivo PDF
+    with open(file_path, "rb") as f:
+        base64_pdf = base64.b64encode(f.read()).decode('utf-8')
+    
+    # Criando o iframe para exibição
+    pdf_display = f'<iframe src="data:application/pdf;base64,{base64_pdf}" width="100%" height="800" type="application/pdf"></iframe>'
+    
+    # Exibindo no Streamlit
+    st.markdown(pdf_display, unsafe_allow_html=True)
+
 # Título e introdução
 st.title(":orange[As Empresas Estatais Distritais]")
 st.header("Uma análise das empresas pertencentes ao Governo do Distrito Federal", divider="orange")
