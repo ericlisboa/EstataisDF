@@ -12,21 +12,54 @@ st.set_page_config(
 # 2. DEFINIÇÃO DE CAMINHOS (Essencial estar aqui em cima para evitar o NameError)
 base_path = os.path.dirname(__file__)
 
-# 3. CSS PARA FUNDO BRANCO E TEXTO ESCURO
+# 3. # CSS para cores customizadas: Botões Laranjas, Sidebar Cinza e Títulos Laranjas
 page_bg_img = """
 <style>
+    /* 1. Fundo do App e Containers principais */
     [data-testid="stAppViewContainer"] {
         background-color: #FFFFFF !important;
     }
     .main .block-container {
         background-color: #FFFFFF;
-        padding-top: 2rem;
     }
-    /* Forçar cores escuras para legibilidade */
-    h1, h2, h3, h4, h5, h6, p, span, label, .stMarkdown p {
+
+    /* 2. Títulos em Laranja (Pergunta 3) */
+    h1, h2, h3, h4, h5, h6, [data-testid="stHeader"] {
+        color: #fb8c00 !important;
+    }
+    
+    /* Forçar o texto da introdução e parágrafos para preto para legibilidade */
+    p, span, .stMarkdown p {
         color: #1E1E1E !important;
     }
-    /* Cor do divider */
+
+    /* 3. Barra Lateral: Fundo Cinza Médio e Letras Brancas (Pergunta 2) */
+    [data-testid="stSidebar"] {
+        background-color: #808080 !important; /* Cinza médio */
+    }
+    [data-testid="stSidebar"] [data-testid="stMarkdownContainer"] p, 
+    [data-testid="stSidebar"] span, 
+    [data-testid="stSidebar"] label {
+        color: #FFFFFF !important; /* Letras brancas na sidebar */
+    }
+
+    /* 4. Botões: Fundo Laranja e Letras Brancas (Pergunta 1) */
+    /* Isso afetará todos os botões, incluindo o do item 6 */
+    div.stButton > button {
+        background-color: #fb8c00 !important;
+        color: #FFFFFF !important;
+        border: none;
+        border-radius: 5px;
+    }
+    
+    /* Efeito ao passar o mouse no botão (hover) */
+    div.stButton > button:hover {
+        background-color: #e67e22 !important;
+        color: #FFFFFF !important;
+        border: none;
+    }
+
+    /* Ajuste do Divider */
     hr {
         border-color: #fb8c00 !important;
     }
