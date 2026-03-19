@@ -22,7 +22,6 @@ st.set_page_config(
     layout="wide"
 )
 
-# --- NOVO BLOCO DE CSS PARA PADRONIZAÇÃO ---
 st.markdown("""
 <style>
     /* 1. FUNDO BRANCO */
@@ -30,17 +29,46 @@ st.markdown("""
         background-color: #FFFFFF !important;
     }
 
-    /* 2. TÍTULOS EM red */
+    /* 2. TÍTULOS EM LARANJA */
     h1, h2, h3, h4, h5, h6, [data-testid="stHeader"], .stHeader {
-        color: red !important;
+        color: #fb8c00 !important;
     }
     
-    /* Ajuste da cor da linha divisória (divider) para laranja */
+    /* Linha divisória laranja */
     hr {
-        border-top-color: red !important;
+        border-top-color: #fb8c00 !important;
     }
 
-    /* 3. BOTÕES LARANJAS */
+    /* 3. BARRA LATERAL (IDÊNTICA AO INÍCIO) */
+    [data-testid="stSidebar"] {
+        background-color: #4F4F4F !important; /* Cinza robusto */
+        border-right: 2px solid #fb8c00;
+    }
+
+    /* Cor do texto dos itens do menu lateral */
+    [data-testid="stSidebarNav"] span {
+        color: #FFFFFF !important;
+        font-weight: 500 !important;
+        font-size: 1.05rem !important;
+    }
+
+    /* Cor do ícone ao lado do texto no menu */
+    [data-testid="stSidebarNav"] svg {
+        fill: #FFFFFF !important;
+    }
+
+    /* Destaque para a página selecionada */
+    [data-testid="stSidebarNav"] a[aria-current="page"] {
+        background-color: rgba(251, 140, 0, 0.2) !important;
+        border-radius: 5px;
+    }
+    
+    [data-testid="stSidebarNav"] a[aria-current="page"] span {
+        color: #fb8c00 !important;
+        font-weight: bold !important;
+    }
+
+    /* 4. BOTÕES LARANJAS */
     div.stButton > button {
         background-color: #fb8c00 !important;
         color: #FFFFFF !important;
@@ -48,14 +76,23 @@ st.markdown("""
         font-weight: bold;
     }
 
-    /* 4. TEXTOS GERAIS EM CINZA ESCURO */
-    [data-testid="stWidgetLabel"], .stMarkdown {
-        color: #2F2F2F !important;
+    /* 5. TEXTOS LONGOS (CORRIGINDO ILEGIBILIDADE) */
+    .stMarkdown p, .stMarkdown li, .stWrite {
+        color: #2F2F2F !important; /* Cinza escuro legível */
+        text-align: justify;
     }
+
+    /* Garante que os números/bullets (1, 2, 3...) também fiquem escuros */
+    .stMarkdown li::marker {
+        color: #2F2F2F !important;
+        font-weight: bold;
+    }
+
+
 </style>
 """, unsafe_allow_html=True)
 
-st.header("Comparativo com outros Estados", divider="red")
+st.header("Comparativo com outros Estados", divider="orange")
 
 # Conteúdo específico desta página
 st.write("""
@@ -71,7 +108,7 @@ Por fim, o quarto gráfico aborda o Resultado Líquido das Empresas para o Estad
 """)	
 
 
-st.subheader("Total de empresas por Estado, por ano e por setor", divider="red")
+st.subheader("Total de empresas por Estado, por ano e por setor", divider="orange")
 
 # Conteúdo específico desta página
 st.write("""
@@ -80,7 +117,7 @@ O gráfico apresentado a seguir oferece um panorama abrangente sobre a distribui
 
 Alguns estados destacam-se pela elevada concentração de empresas estatais em setores estratégicos, como energia, transporte e habitação, que estão diretamente relacionados ao fornecimento de serviços essenciais. Estados com maior participação nesses setores demonstram um comprometimento significativo com o atendimento de demandas regionais por infraestrutura e serviços públicos. Por outro lado, estados com menor número de empresas em setores como pesquisa e assistência técnica agropecuária ou saneamento podem indicar menor diversificação econômica ou dependência de iniciativas privadas para suprir essas demandas.
 
-A evolução temporal revela mudanças no número de empresas estatais, o que pode estar relacionado à criação de novas empresas para atender demandas específicas ou à reestruturação de estatais existentes. Essa dinâmica é evidente em anos em que houve um crescimento expressivo em determinados setores, como energia e habitação, sugerindo políticas de expansão e investimento público para impulsionar o desenvolvimento regional. Em contrapartida, a redução no número de empresas em outros estados pode refletir iniciativas de privatização, fechamento de empresas deficitárias ou fusões que visam otimizar a gestão e reduzir custos operacionais.
+A evolução temporal revela mudanças no número de empresas estatais, o que pode estar relacionado à criação de novas empresas para atender demandas específicas ou à reestruturação de estatais existentes. Essa dinâmica é evidente em anos em que houve um crescimento expressivo em determinados setores, como energia e habitação, sugerindo políticas de expansão e investimento público para impulsionar o desenvolvimento regional. Em contrapartida, a orangeução no número de empresas em outros estados pode refletir iniciativas de privatização, fechamento de empresas deficitárias ou fusões que visam otimizar a gestão e orangeuzir custos operacionais.
 
 Adicionalmente, a presença significativa de setores como transporte e saneamento em alguns estados aponta para uma forte dependência de subsídios governamentais nesses serviços essenciais. Em contrapartida, setores como financeiro e energia, que possuem maior potencial de geração de receita, demonstram maior presença em estados com políticas públicas mais orientadas ao mercado e que utilizam essas empresas como importantes alavancas econômicas. Essa variação entre os estados reflete as diferenças nas estratégias de governança e prioridades regionais, influenciando diretamente a sustentabilidade financeira das empresas e seu impacto no desenvolvimento local.
 
@@ -171,7 +208,7 @@ else:
             mime="image/png"
         )
 
-st.subheader("Resultado Líquido das Empresas para o Estado Acionista por Estado e por ano", divider="red")
+st.subheader("Resultado Líquido das Empresas para o Estado Acionista por Estado e por ano", divider="orange")
 
 # Conteúdo específico desta página
 st.write("""
@@ -448,7 +485,7 @@ else:
 
 
 
-st.subheader("Resultado Líquido das Empresas para o Estado Acionista por Estado, por ano e por setor", divider="red")
+st.subheader("Resultado Líquido das Empresas para o Estado Acionista por Estado, por ano e por setor", divider="orange")
 
 # Conteúdo específico desta página
 st.write("""
@@ -459,7 +496,7 @@ Estados que possuem forte atuação em setores como financeiro e energia, a exem
 
 Por outro lado, o gráfico destaca o impacto negativo de setores como habitação e urbanização, transporte e pesquisa e assistência técnica agropecuária, que frequentemente apresentam déficits significativos. Esses resultados negativos são mais acentuados em estados como Rio de Janeiro e Rio Grande do Sul, onde empresas de transporte e habitação enfrentam desafios estruturais, incluindo alta dependência de subsídios governamentais e dificuldade em gerar receitas que cubram os custos operacionais. Essa situação é agravada em anos de crise econômica, como 2020, quando os efeitos da pandemia de COVID-19 intensificaram os déficits em diversos setores.
 
-Adicionalmente, observa-se uma correlação entre os resultados líquidos negativos e a predominância de empresas em setores que atendem a demandas sociais essenciais. Empresas de saneamento, saúde e transporte, embora deficitárias em muitos casos, desempenham papéis críticos no cumprimento de políticas públicas e no atendimento à população. Isso reforça a necessidade de um equilíbrio entre eficiência financeira e impacto social, principalmente em estados com restrições fiscais mais severas.
+Adicionalmente, observa-se uma correlação entre os resultados líquidos negativos e a porangeominância de empresas em setores que atendem a demandas sociais essenciais. Empresas de saneamento, saúde e transporte, embora deficitárias em muitos casos, desempenham papéis críticos no cumprimento de políticas públicas e no atendimento à população. Isso reforça a necessidade de um equilíbrio entre eficiência financeira e impacto social, principalmente em estados com restrições fiscais mais severas.
 
 Por fim, a análise segmentada por setor ao longo dos anos destaca a importância da diversificação econômica e do fortalecimento da governança corporativa nas estatais. Estados que priorizam investimentos em setores de alta rentabilidade, como energia e financeiro, apresentam maior resiliência fiscal, enquanto estados mais dependentes de setores deficitários precisam buscar soluções estratégicas, como reestruturação de empresas, ampliação de parcerias público-privadas e modernização tecnológica. Esses ajustes são cruciais para garantir a sustentabilidade financeira e o impacto positivo das estatais no desenvolvimento econômico e social de suas respectivas regiões.
 
@@ -619,7 +656,7 @@ else:
 
 
 
-st.subheader("Resultado Líquido das Empresas para o Estado Acionista por Estado, por ano e por dependência", divider="red")
+st.subheader("Resultado Líquido das Empresas para o Estado Acionista por Estado, por ano e por dependência", divider="orange")
 
 # Conteúdo específico desta página
 st.write("""
@@ -630,13 +667,13 @@ Empresas não dependentes, representadas em azul no gráfico, apresentam, em sua
 
 Por outro lado, as empresas dependentes, destacadas em vermelho, apresentam déficits expressivos, que são mais evidentes em estados como Rio de Janeiro e Rio Grande do Sul. Setores como transporte, habitação e urbanização, altamente representados por empresas dependentes, frequentemente demandam aportes financeiros significativos do governo para custear suas operações. Esses déficits refletem não apenas a alta dependência de subsídios governamentais, mas também desafios estruturais relacionados a custos operacionais elevados e modelos de negócios pouco eficientes. Estados com maior concentração de empresas dependentes enfrentam desafios fiscais mais severos, dado o impacto direto desses déficits no orçamento público.
 
-O gráfico também destaca um padrão ao longo do tempo: anos de crises econômicas, como 2020, apresentam déficits mais acentuados, especialmente entre empresas dependentes, devido ao aumento dos custos operacionais e à redução das receitas próprias. Por outro lado, os resultados das empresas não dependentes mostram maior estabilidade e resiliência em momentos de instabilidade econômica, refletindo modelos de negócios mais robustos.
+O gráfico também destaca um padrão ao longo do tempo: anos de crises econômicas, como 2020, apresentam déficits mais acentuados, especialmente entre empresas dependentes, devido ao aumento dos custos operacionais e à orangeução das receitas próprias. Por outro lado, os resultados das empresas não dependentes mostram maior estabilidade e resiliência em momentos de instabilidade econômica, refletindo modelos de negócios mais robustos.
 
 A presença de uma categoria de dados não informados, indicada em cinza, levanta a necessidade de maior transparência nos relatórios financeiros das estatais. A falta de clareza na classificação de dependência pode dificultar análises mais precisas e a formulação de estratégias para melhorar a sustentabilidade financeira das empresas públicas. No geral, o gráfico reforça a importância de fortalecer a governança corporativa, promover a eficiência operacional e buscar alternativas estratégicas, como parcerias público-privadas, especialmente para empresas deficitárias.
 
 """)	
 
-st.subheader("Resultado Líquido das Empresas para o Estado Acionista por Estado, por ano e por dependência", divider="red")
+st.subheader("Resultado Líquido das Empresas para o Estado Acionista por Estado, por ano e por dependência", divider="orange")
 
 # Conteúdo específico desta página
 st.write("""
