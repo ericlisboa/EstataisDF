@@ -41,10 +41,7 @@ page_bg_img = """
     [data-testid="stSidebar"] span, 
     [data-testid="stSidebar"] label {
         color: #FFFFFF !important; /* Letras brancas na sidebar */
-    [data-testid="stSidebar"] * {
-        font-family: "Source Sans Pro", sans-serif; /* Garante uma fonte que suporta bem PT-BR */
-        text-rendering: optimizeLegibility;
-    }
+     }
 
     /* 4. Botões: Fundo Laranja e Letras Brancas (Pergunta 1) */
     /* Isso afetará todos os botões, incluindo o do item 6 */
