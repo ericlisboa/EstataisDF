@@ -23,39 +23,43 @@ st.set_page_config(
 
 st.markdown("""
 <style>
-    /* 1. FUNDO GERAL DA PÁGINA */
+    /* 1. FUNDO BRANCO */
     [data-testid="stAppViewContainer"] {
         background-color: #FFFFFF !important;
     }
 
-    /* 2. TÍTULOS (H1, H2, H3) E DIVISORES EM LARANJA */
+    /* 2. TÍTULOS EM LARANJA */
     h1, h2, h3, h4, h5, h6, [data-testid="stHeader"], .stHeader {
         color: #fb8c00 !important;
     }
     
+    /* Linha divisória laranja */
     hr {
         border-top-color: #fb8c00 !important;
     }
 
-    /* 3. BARRA LATERAL (CONFIGURAÇÃO IDÊNTICA AO INÍCIO.PY) */
+    /* 3. BARRA LATERAL (IDÊNTICA AO INÍCIO) */
     [data-testid="stSidebar"] {
-        background-color: #4F4F4F !important; /* Cinza escuro */
-        border-right: 2px solid #fb8c00; /* Linha laranja lateral */
+        background-color: #4F4F4F !important; /* Cinza robusto */
+        border-right: 2px solid #fb8c00;
     }
 
-    /* Força Texto e Ícones da Sidebar em BRANCO */
+    /* Cor do texto dos itens do menu lateral */
     [data-testid="stSidebarNav"] span {
         color: #FFFFFF !important;
         font-weight: 500 !important;
+        font-size: 1.05rem !important;
     }
 
+    /* Cor do ícone ao lado do texto no menu */
     [data-testid="stSidebarNav"] svg {
         fill: #FFFFFF !important;
     }
 
-    /* Destaque da página atual no menu lateral */
+    /* Destaque para a página selecionada */
     [data-testid="stSidebarNav"] a[aria-current="page"] {
         background-color: rgba(251, 140, 0, 0.2) !important;
+        border-radius: 5px;
     }
     
     [data-testid="stSidebarNav"] a[aria-current="page"] span {
@@ -63,32 +67,21 @@ st.markdown("""
         font-weight: bold !important;
     }
 
-    /* 4. TEXTOS DE CORPO (PARÁGRAFOS E LISTAS) EM CINZA ESCURO */
-    /* Usamos seletores específicos para NÃO afetar a Sidebar */
-    [data-testid="stMarkdownContainer"] p, 
-    [data-testid="stMarkdownContainer"] li, 
-    [data-testid="stMarkdownContainer"] ol {
-        color: #2F2F2F !important;
-        text-align: justify;
-    }
-
-    /* Cor dos números (1, 2, 3) nas listas */
-    li::marker {
-        color: #2F2F2F !important;
-        font-weight: bold;
-    }
-
-    /* 5. BOTÕES EM LARANJA */
+    /* 4. BOTÕES LARANJAS */
     div.stButton > button {
         background-color: #fb8c00 !important;
         color: #FFFFFF !important;
         border: none;
         font-weight: bold;
     }
+
+    /* 5. TEXTOS LONGOS (CORRIGINDO ILEGIBILIDADE) */
+    .stMarkdown p, .stWrite {
+        color: #2F2F2F !important; /* Cinza escuro legível */
+        text-align: justify;
+    }
 </style>
 """, unsafe_allow_html=True)
-
-st.header("Quais são as estatais do DF?", divider="orange")
 
 # Conteúdo específico desta página
 st.write("""
