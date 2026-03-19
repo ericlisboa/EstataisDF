@@ -6,90 +6,98 @@ st.set_page_config(
     page_title="Estatais Distritais",
     page_icon="📈",
     layout="wide",
-    initial_sidebar_state="collapsed"
+    initial_sidebar_state="expanded"
 )
 
 # 2. DEFINIÇÃO DE CAMINHOS
 base_path = os.path.dirname(__file__)
 
-# 3. CSS PARA SIDEBAR, TÍTULOS E CORREÇÃO DE TEXTO (PARÁGRAFOS)
-page_bg_img = """
+# 3. CSS GLOBAL (Sidebar e Elementos de Interface)
+st.markdown("""
 <style>
-    /* 1. FUNDO DO APP */
+    /* Fundo do App */
     [data-testid="stAppViewContainer"] {
         background-color: #FFFFFF !important;
     }
 
-    /* 2. COR DOS PARÁGRAFOS E TEXTOS (Resolução da sua dúvida) */
-    /* Força a cor preta em parágrafos, spans, labels e marcações markdown */
-    p, span, label, .stMarkdown p, .stMarkdown {
-        color: #1E1E1E !important; 
-        font-size: 1.1rem !important;
-    }
-
-    /* 3. TÍTULOS PRINCIPAIS (Laranja) */
+    /* Títulos em Laranja */
     h1, h2, h3, h4, h5, h6, [data-testid="stHeader"] {
         color: #fb8c00 !important;
     }
 
-    /* 4. BARRA LATERAL (Sidebar) */
+    /* BARRA LATERAL (Sidebar) */
     [data-testid="stSidebar"] {
-        background-color: #4F4F4F !important; /* Cinza robusto */
+        background-color: #4F4F4F !important;
         border-right: 2px solid #fb8c00;
     }
 
-    /* Texto e ícones da barra lateral em Branco */
-    [data-testid="stSidebarNav"] span, [data-testid="stSidebarNav"] svg {
+    /* Texto da Sidebar em Branco */
+    [data-testid="stSidebarNav"] span {
         color: #FFFFFF !important;
+        font-weight: 500 !important;
+    }
+
+    /* Ícones da Sidebar em Branco */
+    [data-testid="stSidebarNav"] svg {
         fill: #FFFFFF !important;
     }
 
-    /* 5. BOTÕES LARANJAS */
+    /* BOTÕES LARANJAS */
     div.stButton > button {
         background-color: #fb8c00 !important;
         color: #FFFFFF !important;
         border: none;
         font-weight: bold;
+        transition: 0.3s;
     }
     
     div.stButton > button:hover {
         background-color: #e67e22 !important;
-        color: #FFFFFF !important;
+        border: none;
     }
 </style>
-"""
-st.markdown(page_bg_img, unsafe_allow_html=True)
+""", unsafe_allow_html=True)
 
 # 4. SIDEBAR (Logomarcas)
 with st.sidebar:
     logo_rbcip_path = os.path.join(base_path, "logorbcip.png")
     logo_fap_path = os.path.join(base_path, "logofap.png")
     
-    col_side1, col_side2, col_side3 = st.columns([1, 7, 1])
+    col_s1, col_s2, col_s3 = st.columns([1, 8, 1])
     
     if os.path.exists(logo_rbcip_path):
-        with col_side2:
-            st.image(logo_rbcip_path, width=250)
+        with col_s2:
+            st.image(logo_rbcip_path, use_container_width=True)
     
     st.markdown("<br>", unsafe_allow_html=True)
     
     if os.path.exists(logo_fap_path):
-        with col_side2:
-            st.image(logo_fap_path, width=250)
+        with col_s2:
+            st.image(logo_fap_path, use_container_width=True)
 
-# 5. TÍTULO E INTRODUÇÃO
+# 5. TÍTULO E INTRODUÇÃO (Com correção cirúrgica de cor)
 st.title(":orange[As Empresas Estatais Distritais]")
 st.header("Uma análise das empresas pertencentes ao Governo do Distrito Federal", divider="orange")
 
-# O texto abaixo agora será lido em preto/grafite devido ao CSS acima
-introducao = """
-O presente painel tem como finalidade organizar, consolidar e disponibilizar de forma acessível os dados relativos às empresas estatais do Distrito Federal (DF). A iniciativa visa aumentar a transparência no relacionamento financeiro entre o Governo do DF e suas empresas públicas, permitindo uma visão detalhada sobre sua governança, estrutura e desempenho econômico-financeiro.
-
-As informações apresentadas foram extraídas de fontes oficiais, incluindo declarações do Governo do Distrito Federal, demonstrações contábeis das empresas e bases de dados públicas acessíveis por meio de portais governamentais. O período analisado compreende os anos de 2020 a 2023, garantindo uma visão histórica e comparativa da evolução das estatais distritais.
+# Usamos HTML isolado para garantir que APENAS este texto fique escuro e legível
+introducao_html = """
+<div style="color: #2F2F2F !important; font-size: 1.15rem; line-height: 1.6; text-align: justify; font-family: sans-serif;">
+    O presente painel tem como finalidade organizar, consolidar e disponibilizar de forma acessível os dados 
+    relativos às empresas estatais do Distrito Federal (DF). A iniciativa visa aumentar a transparência 
+    no relacionamento financeiro entre o Governo do DF e suas empresas públicas, permitindo uma visão 
+    detalhada sobre sua governança, estrutura e desempenho econômico-financeiro.
+    <br><br>
+    As informações apresentadas foram extraídas de fontes oficiais, incluindo declarações do Governo do 
+    Distrito Federal, demonstrações contábeis das empresas e bases de dados públicas acessíveis por meio 
+    de portais governamentais. O período analisado compreende os anos de 2020 a 2023, garantindo uma 
+    visão histórica e comparativa da evolução das estatais distritais.
+</div>
 """
-st.markdown(introducao)
+st.markdown(introducao_html, unsafe_allow_html=True)
 
-# 6. SEÇÃO DE NAVEGAÇÃO
+st.markdown("<br>", unsafe_allow_html=True)
+
+# 6. SEÇÃO DE NAVEGAÇÃO (Botões de Atalho)
 st.subheader("As informações deste painel foram organizadas nas seguintes seções:", divider="orange")
 
 col1, col2 = st.columns(2)
