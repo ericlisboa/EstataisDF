@@ -56,7 +56,7 @@ page_bg_img = """
 
     [data-testid="stSidebar"] {
 
-        background-color: #4F4F4F !important; /* Um cinza mais robusto */
+        background-color: #f5f5f5 !important; /* Um cinza mais robusto */
 
         border-right: 2px solid #fb8c00; /* Linha sutil laranja para separar */
 
