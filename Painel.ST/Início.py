@@ -35,12 +35,15 @@ page_bg_img = """
 
     /* 3. Barra Lateral: Fundo Cinza Médio e Letras Brancas (Pergunta 2) */
     [data-testid="stSidebar"] {
-        background-color: #808080 !important; /* Cinza médio */
+        background-color: #a8a7a7 !important; /* Cinza médio */
     }
     [data-testid="stSidebar"] [data-testid="stMarkdownContainer"] p, 
     [data-testid="stSidebar"] span, 
     [data-testid="stSidebar"] label {
         color: #FFFFFF !important; /* Letras brancas na sidebar */
+    [data-testid="stSidebar"] * {
+        font-family: "Source Sans Pro", sans-serif; /* Garante uma fonte que suporta bem PT-BR */
+        text-rendering: optimizeLegibility;
     }
 
     /* 4. Botões: Fundo Laranja e Letras Brancas (Pergunta 1) */
