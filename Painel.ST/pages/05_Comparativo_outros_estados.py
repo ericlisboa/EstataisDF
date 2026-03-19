@@ -92,6 +92,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
+st.title(":orange[As Empresas Estatais Distritais]")
 st.header("Comparativo com outros Estados", divider="orange")
 
 # Conteúdo específico desta página
