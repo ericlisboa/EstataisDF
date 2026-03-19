@@ -4,6 +4,39 @@ import os
 # 1. Configuração da página
 st.set_page_config(page_title="Download do Boletim", layout="wide")
 
+# --- NOVO BLOCO DE CSS PARA PADRONIZAÇÃO ---
+st.markdown("""
+<style>
+    /* 1. FUNDO BRANCO */
+    [data-testid="stAppViewContainer"] {
+        background-color: #FFFFFF !important;
+    }
+
+    /* 2. TÍTULOS EM LARANJA */
+    h1, h2, h3, h4, h5, h6, [data-testid="stHeader"], .stHeader {
+        color: #fb8c00 !important;
+    }
+    
+    /* Ajuste da cor da linha divisória (divider) para laranja */
+    hr {
+        border-top-color: #fb8c00 !important;
+    }
+
+    /* 3. BOTÕES LARANJAS */
+    div.stButton > button {
+        background-color: #fb8c00 !important;
+        color: #FFFFFF !important;
+        border: none;
+        font-weight: bold;
+    }
+
+    /* 4. TEXTOS GERAIS EM CINZA ESCURO */
+    [data-testid="stWidgetLabel"], .stMarkdown {
+        color: #2F2F2F !important;
+    }
+</style>
+""", unsafe_allow_html=True)
+
 # 2. Definição dos caminhos
 base_path = os.path.dirname(os.path.dirname(__file__))
 pdf_path = os.path.join(base_path, "Boletim_das_Estatais_Distritais.pdf")
