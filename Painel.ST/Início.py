@@ -165,24 +165,18 @@ with st.sidebar:
 
 
 # 5. TÍTULO E INTRODUÇÃO
-
 st.title(":orange[As Empresas Estatais Distritais]")
-
 st.header("Uma análise das empresas pertencentes ao Governo do Distrito Federal", divider="orange")
 
-
-
+# Texto com a cor alterada manualmente para preto
 introducao = """
-
+<span style="color: #000000;">
 O presente painel tem como finalidade organizar, consolidar e disponibilizar de forma acessível os dados relativos às empresas estatais do Distrito Federal (DF). A iniciativa visa aumentar a transparência no relacionamento financeiro entre o Governo do DF e suas empresas públicas, permitindo uma visão detalhada sobre sua governança, estrutura e desempenho econômico-financeiro.
-
-
-
+<br><br>
 As informações apresentadas foram extraídas de fontes oficiais, incluindo declarações do Governo do Distrito Federal, demonstrações contábeis das empresas e bases de dados públicas acessíveis por meio de portais governamentais. O período analisado compreende os anos de 2020 a 2023, garantindo uma visão histórica e comparativa da evolução das estatais distritais.
-
+</span>
 """
-
-st.markdown(introducao)
+st.markdown(introducao, unsafe_allow_html=True)
 
 
 
