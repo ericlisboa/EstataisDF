@@ -75,10 +75,17 @@ st.markdown("""
         font-weight: bold;
     }
 
-    /* 5. TEXTOS LONGOS (CORRIGINDO ILEGIBILIDADE) */
-    .stMarkdown p, .stWrite {
+/* 5. TEXTOS GERAIS, LISTAS E PARÁGRAFOS (Resolução da ilegibilidade) */
+    .stMarkdown p, .stMarkdown li, .stMarkdown ol, .stMarkdown ul, span {
         color: #2F2F2F !important; /* Cinza escuro legível */
         text-align: justify;
+        font-family: sans-serif;
+    }
+
+    /* Garante que os números das listas (1, 2, 3...) também fiquem escuros */
+    .stMarkdown li::marker {
+        color: #2F2F2F !important;
+        font-weight: bold;
     }
 </style>
 """, unsafe_allow_html=True)
