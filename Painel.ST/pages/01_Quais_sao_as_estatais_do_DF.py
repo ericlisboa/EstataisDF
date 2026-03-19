@@ -40,7 +40,7 @@ st.markdown("""
 
     /* 3. BARRA LATERAL (IDÊNTICA AO INÍCIO) */
     [data-testid="stSidebar"] {
-        background-color: #4F4F4F !important; /* Cinza robusto */
+        background-color: #f5f5f5 !important; /* Cinza robusto */
         border-right: 2px solid #fb8c00;
     }
 
