@@ -19,65 +19,35 @@ def get_base64_of_image(image_path):
 def set_background(image_path):
     base64_image = get_base64_of_image(image_path)
     
-    # CSS para adicionar a imagem de fundo sem alterar o cabeçalho e sidebar
-    page_bg_img = f"""
-    <style>
-    /* Aplicar imagem de fundo apenas ao container principal */
-    [data-testid="stAppViewContainer"] {{
-        background-image: url("data:image/jpeg;base64,{base64_image}");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-    }}
-    
-    /* Remover a cor de fundo do cabeçalho para manter seu estilo original */
-    [data-testid="stHeader"] {{
-        background-color: transparent !important;
-    }}
-    
-    /* Remover a cor de fundo da barra lateral para manter seu estilo original */
-    [data-testid="stSidebar"] {{
-        background-color: transparent !important;
-    }}
-    
-    /* Manter o fundo principal com uma camada semitransparente para legibilidade */
-    .main .block-container {{
-        background-color: rgba(255, 255, 255, 0.85);
-        padding: 2rem;
-        border-radius: 10px;
-    }}
-    
-    /* Melhorias para dispositivos móveis */
-    @media (max-width: 768px) {{
-        .main .block-container {{
+# CSS simplificado para fundo branco e ajustes de layout
+page_bg_img = """
+<style>
+    /* Garante que o fundo do app seja branco */
+    [data-testid="stAppViewContainer"] {
+        background-color: #FFFFFF;
+    }
+
+    /* Remove a transparência e bordas do container de conteúdo para um visual limpo */
+    .main .block-container {
+        background-color: #FFFFFF;
+        padding-top: 2rem;
+    }
+
+    /* Ajustes para dispositivos móveis permanecem úteis */
+    @media (max-width: 768px) {
+        .main .block-container {
             padding: 1rem;
-        }}
-        
-        /* Ajuste para botões em telas pequenas */
-        .stButton>button {{
+        }
+        .stButton>button {
             width: 100%;
             margin-bottom: 10px;
-        }}
-        
-        /* Reduzir tamanho do título em dispositivos móveis */
-        h1 {{
-            font-size: 1.8rem !important;
-        }}
-        
-        h2 {{
-            font-size: 1.5rem !important;
-        }}
-        
-        /* Garantir que a sidebar não sobrepõe o conteúdo quando aberta */
-        [data-testid="stSidebar"] {{
-            min-width: 0px !important;
-            max-width: 300px !important;
-        }}
-    }}
-    </style>
-    """
-    st.markdown(page_bg_img, unsafe_allow_html=True)
+        }
+        h1 { font-size: 1.8rem !important; }
+        h2 { font-size: 1.5rem !important; }
+    }
+</style>
+"""
+st.markdown(page_bg_img, unsafe_allow_html=True)
 
 # Configurações da página
 st.set_page_config(
