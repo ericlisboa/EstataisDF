@@ -21,6 +21,39 @@ st.set_page_config(
     layout="wide"
 )
 
+# --- NOVO BLOCO DE CSS PARA PADRONIZAÇÃO ---
+st.markdown("""
+<style>
+    /* 1. FUNDO BRANCO */
+    [data-testid="stAppViewContainer"] {
+        background-color: #FFFFFF !important;
+    }
+
+    /* 2. TÍTULOS EM LARANJA */
+    h1, h2, h3, h4, h5, h6, [data-testid="stHeader"], .stHeader {
+        color: #fb8c00 !important;
+    }
+    
+    /* Ajuste da cor da linha divisória (divider) para laranja */
+    hr {
+        border-top-color: #fb8c00 !important;
+    }
+
+    /* 3. BOTÕES LARANJAS */
+    div.stButton > button {
+        background-color: #fb8c00 !important;
+        color: #FFFFFF !important;
+        border: none;
+        font-weight: bold;
+    }
+
+    /* 4. TEXTOS GERAIS EM CINZA ESCURO */
+    [data-testid="stWidgetLabel"], .stMarkdown {
+        color: #2F2F2F !important;
+    }
+</style>
+""", unsafe_allow_html=True)
+
 st.header("Qual o resultado financeiro das estatais?", divider="red")
 
 # Conteúdo específico desta página
