@@ -187,15 +187,6 @@ st.subheader("As informações deste painel foram organizadas nas seguintes seç
 col1, col2 = st.columns(2)
 
 
-
-# 6. SEÇÃO DE NAVEGAÇÃO (Segura contra erros de sistema)
-
-st.subheader("As informações deste painel foram organizadas nas seguintes seções:", divider="orange")
-
-col1, col2 = st.columns(2)
-
-
-
 with col1:
 
     if st.button("1. Quais são as estatais do DF?", use_container_width=True):
