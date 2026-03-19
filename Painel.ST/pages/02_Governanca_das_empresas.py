@@ -21,6 +21,39 @@ st.set_page_config(
     layout="wide"
 )
 
+# --- NOVO BLOCO DE CSS PARA PADRONIZAÇÃO ---
+st.markdown("""
+<style>
+    /* 1. FUNDO BRANCO */
+    [data-testid="stAppViewContainer"] {
+        background-color: #FFFFFF !important;
+    }
+
+    /* 2. TÍTULOS EM Blue */
+    h1, h2, h3, h4, h5, h6, [data-testid="stHeader"], .stHeader {
+        color: blue !important;
+    }
+    
+    /* Ajuste da cor da linha divisória (divider) para laranja */
+    hr {
+        border-top-color: blue !important;
+    }
+
+    /* 3. BOTÕES LARANJAS */
+    div.stButton > button {
+        background-color: #fb8c00 !important;
+        color: #FFFFFF !important;
+        border: none;
+        font-weight: bold;
+    }
+
+    /* 4. TEXTOS GERAIS EM CINZA ESCURO */
+    [data-testid="stWidgetLabel"], .stMarkdown {
+        color: #2F2F2F !important;
+    }
+</style>
+""", unsafe_allow_html=True)
+
 st.header("Como é a governança das empresas?", divider="blue")
 
 # Conteúdo específico desta página
@@ -28,20 +61,20 @@ st.write("""
 
 A governança corporativa é essencial para as empresas, pois proporciona uma estrutura de regras, práticas e processos que orientam a direção e o controle delas. Geralmente, a governança efetiva leva a uma melhor tomada de decisões, maior transparência, e maior confiança dos investidores e do público em geral. Para estatais, particularmente, a boa governança assegura que as práticas de gestão estejam alinhadas com os interesses públicos e em conformidade com as políticas governamentais.
 
-**:blue[Conselho de Administração]**  
+**:[Conselho de Administração]**  
 O Conselho de Administração é um componente central da governança corporativa, responsável por definir a direção estratégica da empresa. Composto por membros que trazem uma diversidade de experiências e perspectivas, este conselho tem a tarefa de supervisionar as operações e garantir que a gestão esteja trabalhando para alcançar os interesses dos acionistas e outros stakeholders. Ele fornece orientação sobre grandes decisões estratégicas e avalia o desempenho da equipe de gestão.
 
-**:blue[Conselho Fiscal]**  
+**:[Conselho Fiscal]**  
 O Conselho Fiscal tem como principal missão a fiscalização das responsabilidades financeiras e de contabilidade da empresa. Ele funciona como uma salvaguarda independente, garantindo que os gastos sejam apropriados e que as práticas contábeis estejam em conformidade com normas e regulamentos. Ao fazer isso, ele reduz os riscos de fraudes e promove a transparência nos relatórios financeiros, reforçando a confiança dos acionistas e do público.
 
-**:blue[Comitê de Auditoria]**  
+**:[Comitê de Auditoria]**  
 O Comitê de Auditoria trabalha em estreita colaboração com o Conselho Fiscal, desempenhando um papel crucial no fortalecimento dos controles internos da empresa. Este comitê é responsável por revisar e supervisionar os processos de auditoria interna e externa, além de assegurar que a empresa adote práticas de gerenciamento de riscos eficazes. Ao identificar e abordar potenciais problemas antes que se tornem significativos, o Comitê de Auditoria contribui para a saúde financeira sustentável da empresa.
 
 Em conjunto, esses componentes de governança fortalecem a resiliência operativa e financeira da empresa, alinhando suas atividades com as melhores práticas de mercado e regulatórias. Eles formam um sistema de freios e contrapesos que, quando bem implementado, maximiza o valor para acionistas e outros interessados, ao mesmo tempo que mitiga riscos potenciais.
 
 """)	
 
-st.subheader("Quantitativo de Governança Corporativa nas Empresas Estatais do Distrito Federal em 2023", divider="blue")
+st.subheader("Quantitativo de Governança Corporativa nas Empresas Estatais do Distrito Federal em 2023", divider="")
 
 # Conteúdo específico desta página
 st.write("""
@@ -138,7 +171,7 @@ st.dataframe(
 )
 
 
-st.subheader("Análise da Distribuição de Empresas por Combinação de Estruturas de Governança em 2023", divider="blue")
+st.subheader("Análise da Distribuição de Empresas por Combinação de Estruturas de Governança em 2023", divider="")
 
 # Conteúdo específico desta página
 st.write("""
