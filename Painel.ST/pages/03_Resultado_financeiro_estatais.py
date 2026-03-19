@@ -76,18 +76,18 @@ st.markdown("""
     }
 
     /* 5. TEXTOS LONGOS (CORRIGINDO ILEGIBILIDADE) */
-    .stMarkdown p, .stWrite {
+    .stMarkdown p, .stMarkdown li, .stWrite {
         color: #2F2F2F !important; /* Cinza escuro legível */
         text-align: justify;
     }
 
-
-
-    /* Garante que os números das listas (1, 2, 3...) também fiquem escuros */
+    /* Garante que os números/bullets (1, 2, 3...) também fiquem escuros */
     .stMarkdown li::marker {
         color: #2F2F2F !important;
         font-weight: bold;
     }
+
+
 </style>
 """, unsafe_allow_html=True)
 
