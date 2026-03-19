@@ -101,16 +101,26 @@ col1, col2 = st.columns(2)
 
 with col1:
     if st.button("1. Quais são as estatais do DF?", use_container_width=True):
-        st.switch_page("pages/01_Quais são as estatais do DF?.py")
+        # O arquivo no GitHub deve se chamar: 01_1. Quais são as estatais do DF?.py
+        st.switch_page("pages/01_1. Quais são as estatais do DF?.py")
+        
     if st.button("2. Como é a governança das empresas?", use_container_width=True):
-        st.switch_page("pages/02_Governanca_das_empresas.py")
+        # O arquivo no GitHub deve se chamar: 02_2. Como é a governança das empresas?.py
+        st.switch_page("pages/02_2. Como é a governança das empresas?.py")
+        
     if st.button("3. Qual o resultado financeiro das estatais?", use_container_width=True):
-        st.switch_page("pages/03_Resultado_financeiro_estatais.py")
+        # O arquivo no GitHub deve se chamar: 03_3. Qual o resultado financeiro das estatais?.py
+        st.switch_page("pages/03_3. Qual o resultado financeiro das estatais?.py")
 
 with col2:
     if st.button("4. Qual o resultado para o Governo do DF?", use_container_width=True):
-        st.switch_page("pages/04_Resultado_financeiro_governo_df.py")
+        # O arquivo no GitHub deve se chamar: 04_4. Qual o resultado para o Governo do DF?.py
+        st.switch_page("pages/04_4. Qual o resultado para o Governo do DF?.py")
+        
     if st.button("5. Comparativo com outros Estados", use_container_width=True):
-        st.switch_page("pages/05_Comparativo_outros_estados.py")
+        # O arquivo no GitHub deve se chamar: 05_5. Comparativo com outros Estados.py
+        st.switch_page("pages/05_5. Comparativo com outros Estados.py")
+        
     if st.button("6. Boletim das Estatais (Download)", use_container_width=True):
-        st.switch_page("pages/06_Boletim_Completo.py")
+        # O arquivo no GitHub deve se chamar: 06_6. Boletim das Estatais (Download).py
+        st.switch_page("pages/06_6. Boletim das Estatais (Download).py")
