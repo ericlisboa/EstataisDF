@@ -55,23 +55,6 @@ st.markdown("""
 
 st.header("Quais são as estatais do DF?", divider="orange")
 
-# --- TEXTO DE INTRODUÇÃO COM COR CONTROLADA ---
-texto_introducao = """
-<div style="color: #2F2F2F !important; font-size: 1.1rem; line-height: 1.6; text-align: justify;">
-No ano de 2023, o Distrito Federal possuía 26 empresas estatais ativas. Esse número permaneceu estável em relação aos anos de 2021 e 2022. Já em 2020, o DF contava com 22 estatais, evidenciando um aumento no quantitativo dessas instituições ao longo do período analisado.
-<br><br>
-A expansão do número de empresas ocorreu devido à criação de quatro novas estatais ligadas ao setor energético, todas pertencentes ao grupo CEB (Companhia Energética de Brasília), a saber:
-<ol>
-    <li><b>CEB Geração</b> – Responsável pela produção de energia elétrica...</li>
-    <li><b>CEB Iluminação Pública e Serviços</b> – Voltada à gestão...</li>
-    <li><b>CEB Lajeado</b> – Criada para atuação específica...</li>
-    <li><b>CEB Participações</b> – Destinada à administração...</li>
-</ol>
-... (restante do seu texto formatado similarmente dentro da div) ...
-</div>
-"""
-st.markdown(texto_introducao, unsafe_allow_html=True)
-
 # Conteúdo específico desta página
 st.write("""
 
@@ -151,7 +134,7 @@ df_styled.set_table_styles(
 df_styled
 
 
-st.subheader("Distribuição das Empresas Estatais do DF por Dependência Financeira", divider="green")
+st.subheader("Distribuição das Empresas Estatais do DF por Dependência Financeira", divider="orange")
 
 # Conteúdo específico desta página
 st.write("""
@@ -247,7 +230,7 @@ col1, col2, col3 = st.columns([5, 1, 1])
 with col1:
     st.pyplot(fig)
 
-st.subheader("Análise da Quantidade de Empresas Estatais por Setor no Distrito Federal", divider="green")
+st.subheader("Análise da Quantidade de Empresas Estatais por Setor no Distrito Federal", divider="orange")
 
 st.write("""
 
