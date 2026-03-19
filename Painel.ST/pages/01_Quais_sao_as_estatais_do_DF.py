@@ -81,6 +81,13 @@ st.markdown("""
         text-align: justify;
     }
 
+    /* 5. TEXTOS GERAIS, LISTAS E PARÁGRAFOS (Resolução da ilegibilidade) */
+    .stMarkdown li, .stMarkdown ol, span {
+        color: #2F2F2F !important; /* Cinza escuro legível */
+        text-align: justify;
+        font-family: sans-serif;
+    }
+
     /* Garante que os números das listas (1, 2, 3...) também fiquem escuros */
     .stMarkdown li::marker {
         color: #2F2F2F !important;
