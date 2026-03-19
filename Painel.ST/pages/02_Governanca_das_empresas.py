@@ -91,6 +91,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
+st.title(":orange[As Empresas Estatais Distritais]")
 st.header("Como é a governança das empresas?", divider="orange")
 
 # Conteúdo específico desta página
