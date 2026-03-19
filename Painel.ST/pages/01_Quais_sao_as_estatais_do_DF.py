@@ -98,17 +98,23 @@ No ano de 2023, o Distrito Federal possuía 26 empresas estatais ativas. Esse n�
 
 A expansão do número de empresas ocorreu devido à criação de quatro novas estatais ligadas ao setor energético, todas pertencentes ao grupo CEB (Companhia Energética de Brasília), a saber:
 
-CEB Geração – Responsável pela produção de energia elétrica em usinas próprias e participação em projetos de geração
-CEB Iluminação Pública e Serviços – Voltada à gestão e operação da infraestrutura de iluminação pública no Distrito Federal
-CEB Lajeado – Criada para atuação específica no setor de energia, com foco em projetos estratégicos de geração e distribuição
-CEB Participações – Destinada à administração de participações societárias da CEB em empresas do setor elétrico
+CEB Geração – Responsável pela produção de energia elétrica em usinas próprias e participação em projetos de geração;
+
+CEB Iluminação Pública e Serviços – Voltada à gestão e operação da infraestrutura de iluminação pública no Distrito Federal;
+
+CEB Lajeado – Criada para atuação específica no setor de energia, com foco em projetos estratégicos de geração e distribuição;
+
+CEB Participações – Destinada à administração de participações societárias da CEB em empresas do setor elétrico;
 
 Além das empresas em operação, o painel identificou quatro estatais em processo de liquidação no ano de 2023. O encerramento dessas entidades pode estar relacionado a reestruturações estratégicas, fusões ou inviabilidade econômica. As empresas em liquidação são:
 
-CODEPLAN - Companhia de Planejamento do Distrito Federal – Empresa pública tradicionalmente voltada ao planejamento e desenvolvimento de soluções tecnológicas para o governo
-DF Gestão de Ativos – Criada para administrar ativos do Governo do Distrito Federal, mas encerrada devido a reestruturações no modelo de gestão patrimonial
-PROFLORA - Florestamento e Reflorestamento – Empresa focada em projetos ambientais e reflorestamento, cuja liquidação pode indicar mudanças na política ambiental do estado
-SAB - Sociedade de Abastecimento de Brasília – Atuava na distribuição de produtos alimentícios e insumos, sendo descontinuada por questões operacionais e econômicas
+CODEPLAN - Companhia de Planejamento do Distrito Federal – Empresa pública tradicionalmente voltada ao planejamento e desenvolvimento de soluções tecnológicas para o governo;
+
+DF Gestão de Ativos – Criada para administrar ativos do Governo do Distrito Federal, mas encerrada devido a reestruturações no modelo de gestão patrimonial;
+
+PROFLORA - Florestamento e Reflorestamento – Empresa focada em projetos ambientais e reflorestamento, cuja liquidação pode indicar mudanças na política ambiental do estado;
+
+SAB - Sociedade de Abastecimento de Brasília – Atuava na distribuição de produtos alimentícios e insumos, sendo descontinuada por questões operacionais e econômicas;
 
 A análise do comportamento do número de estatais no DF ao longo do tempo permite compreender as mudanças na estrutura da administração indireta, refletindo decisões estratégicas do governo quanto à viabilidade, eficiência e necessidade dessas entidades. O acompanhamento desses processos de criação e liquidação é essencial para garantir que as empresas públicas cumpram seus objetivos de forma sustentável, promovendo serviços essenciais sem comprometer o equilíbrio fiscal do estado.
 
