@@ -10,22 +10,37 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# 2. CSS PARA FUNDO BRANCO E LIMPEZA DE LAYOUT
+# 2. CSS para fundo branco e forçar cores de texto escuras
 page_bg_img = """
 <style>
-    /* Fundo branco para a aplicação */
+    /* 1. Fundo do App */
     [data-testid="stAppViewContainer"] {
         background-color: #FFFFFF !important;
     }
 
-    /* Ajuste do container principal */
+    /* 2. Container de Conteúdo */
     .main .block-container {
         background-color: #FFFFFF;
         padding-top: 2rem;
-        border-radius: 0px;
     }
 
-    /* Ajustes para dispositivos móveis */
+    /* 3. FORÇAR CORES DE TEXTO (Resolução da legibilidade) */
+    /* Títulos e Subtítulos */
+    h1, h2, h3, h4, h5, h6, .stMarkdown h1, .stMarkdown h2 {
+        color: #1E1E1E !important; 
+    }
+
+    /* Texto comum e parágrafos */
+    p, span, label, .stMarkdown p {
+        color: #31333F !important;
+    }
+
+    /* Ajuste para as linhas divisórias (divider) */
+    hr {
+        border-color: #fb8c00 !important; /* Mantém o laranja da sua marca */
+    }
+
+    /* 4. Ajustes para dispositivos móveis */
     @media (max-width: 768px) {
         .main .block-container {
             padding: 1rem;
@@ -38,9 +53,6 @@ page_bg_img = """
 </style>
 """
 st.markdown(page_bg_img, unsafe_allow_html=True)
-
-# Caminho base para a pasta do projeto
-base_path = os.path.dirname(__file__)
 
 # 3. SIDEBAR (Logomarcas)
 with st.sidebar:
