@@ -21,7 +21,6 @@ st.set_page_config(
     layout="wide"
 )
 
-# --- NOVO BLOCO DE CSS PARA PADRONIZAÇÃO ---
 st.markdown("""
 <style>
     /* 1. FUNDO BRANCO */
@@ -34,12 +33,41 @@ st.markdown("""
         color: #fb8c00 !important;
     }
     
-    /* Ajuste da cor da linha divisória (divider) para laranja */
+    /* Linha divisória laranja */
     hr {
         border-top-color: #fb8c00 !important;
     }
 
-    /* 3. BOTÕES LARANJAS */
+    /* 3. BARRA LATERAL (IDÊNTICA AO INÍCIO) */
+    [data-testid="stSidebar"] {
+        background-color: #4F4F4F !important; /* Cinza robusto */
+        border-right: 2px solid #fb8c00;
+    }
+
+    /* Cor do texto dos itens do menu lateral */
+    [data-testid="stSidebarNav"] span {
+        color: #FFFFFF !important;
+        font-weight: 500 !important;
+        font-size: 1.05rem !important;
+    }
+
+    /* Cor do ícone ao lado do texto no menu */
+    [data-testid="stSidebarNav"] svg {
+        fill: #FFFFFF !important;
+    }
+
+    /* Destaque para a página selecionada */
+    [data-testid="stSidebarNav"] a[aria-current="page"] {
+        background-color: rgba(251, 140, 0, 0.2) !important;
+        border-radius: 5px;
+    }
+    
+    [data-testid="stSidebarNav"] a[aria-current="page"] span {
+        color: #fb8c00 !important;
+        font-weight: bold !important;
+    }
+
+    /* 4. BOTÕES LARANJAS */
     div.stButton > button {
         background-color: #fb8c00 !important;
         color: #FFFFFF !important;
@@ -47,19 +75,28 @@ st.markdown("""
         font-weight: bold;
     }
 
-    /* 4. TEXTOS GERAIS EM CINZA ESCURO */
-    [data-testid="stWidgetLabel"], .stMarkdown {
+    /* 5. TEXTOS LONGOS (CORRIGINDO ILEGIBILIDADE) */
+    .stMarkdown p, .stWrite {
+        color: #2F2F2F !important; /* Cinza escuro legível */
+        text-align: justify;
+    }
+
+
+
+    /* Garante que os números das listas (1, 2, 3...) também fiquem escuros */
+    .stMarkdown li::marker {
         color: #2F2F2F !important;
+        font-weight: bold;
     }
 </style>
 """, unsafe_allow_html=True)
 
-st.header("Qual o resultado financeiro das estatais?", divider="red")
+st.header("Qual o resultado financeiro das estatais?", divider="orange")
 
 # Conteúdo específico desta página
 st.write("""
 
-Entre 2020 e 2023, os resultados financeiros das empresas estatais do Distrito Federal evidenciaram oscilações relevantes, com predominância de empresas lucrativas em três dos quatro anos analisados, mas registrando períodos de piora em 2021 e 2023. 
+Entre 2020 e 2023, os resultados financeiros das empresas estatais do Distrito Federal evidenciaram oscilações relevantes, com porangeominância de empresas lucrativas em três dos quatro anos analisados, mas registrando períodos de piora em 2021 e 2023. 
 
 Enquanto 2020 e 2022 foram marcados por maior proporção de resultados positivos, reflexo de esforços em eficiência operacional e recuperação econômica, 2021 destacou-se pelo aumento expressivo de prejuízos, particularmente nos setores de transporte público, saneamento e assistência técnica agropecuária. 
 
@@ -71,9 +108,9 @@ O comportamento financeiro ao longo do período reforça a necessidade de aprimo
 
 """)	
 
-st.subheader("Distribuição anual das empresas em relação ao lucro ou prejuízo", divider="red")
+st.subheader("Distribuição anual das empresas em relação ao lucro ou prejuízo", divider="orange")
 
-st.subheader(":red[**Ano de 2023**]")
+st.subheader(":orange[**Ano de 2023**]")
 
 # Conteúdo específico desta página
 st.write("""
@@ -195,7 +232,7 @@ with st.expander("Ver dados detalhados de lucro/prejuízo", expanded=False):
         use_container_width=True
     )
 
-st.subheader(":red[**Ano de 2022**]")
+st.subheader(":orange[**Ano de 2022**]")
 
 # Conteúdo específico desta página
 st.write("""
@@ -319,7 +356,7 @@ else:
             use_container_width=True
         )
 
-st.subheader(":red[**Ano de 2021**]")
+st.subheader(":orange[**Ano de 2021**]")
 
 # Conteúdo específico desta página
 st.write("""
@@ -443,7 +480,7 @@ else:
             use_container_width=True
         )
 
-st.subheader(":red[**Ano de 2020**]")
+st.subheader(":orange[**Ano de 2020**]")
 
 # Conteúdo específico desta página
 st.write("""
@@ -568,7 +605,7 @@ else:
         )
 
 # Após todos os gráficos, adicionar uma análise comparativa entre os anos
-st.subheader("Evolução dos Resultados Financeiros (2020-2023)", divider="red")
+st.subheader("Evolução dos Resultados Financeiros (2020-2023)", divider="orange")
 
 # Criar um dataframe resumindo a evolução ao longo dos anos
 anos = [2020, 2021, 2022, 2023]
@@ -638,7 +675,7 @@ st.dataframe(
 )
 
 
-st.subheader("Relação entre Lucro ou Prejuízo e o Patrimônio Líquido em 2023", divider="red")
+st.subheader("Relação entre Lucro ou Prejuízo e o Patrimônio Líquido em 2023", divider="orange")
 
 # Conteúdo específico desta página
 st.write("""
@@ -647,35 +684,35 @@ O gráfico abaixo demonstra a relação entre o lucro ou prejuízo das empresas 
 
 Observa-se que as empresas com patrimônios líquidos elevados, representadas por pontos no extremo direito do gráfico, em sua maioria apresentam lucros consistentes. Este é o caso de empresas do setor financeiro e energético, que, devido à natureza de suas operações e à estrutura de governança robusta, conseguem maximizar a eficiência no uso de seus recursos patrimoniais. A relação positiva entre patrimônio líquido e lucro nessas empresas reforça a importância de uma gestão estratégica orientada para resultados, com foco na otimização de receitas e controle de custos.
 
-Por outro lado, é preocupante notar a presença de empresas com patrimônio líquido reduzido e prejuízos recorrentes, marcadas por pontos no quadrante inferior esquerdo do gráfico. Esses casos, muitas vezes associados a setores como transporte público e assistência técnica agropecuária, evidenciam desafios estruturais significativos. As limitações na geração de receitas próprias, aliadas a custos operacionais elevados e dependência de subsídios governamentais, dificultam a sustentabilidade financeira dessas organizações. Além disso, a gestão de empresas com patrimônios líquidos negativos merece atenção especial, pois representa um risco fiscal para o Governo do Distrito Federal, sendo necessário avaliar medidas de reestruturação e melhoria operacional.
+Por outro lado, é preocupante notar a presença de empresas com patrimônio líquido orangeuzido e prejuízos recorrentes, marcadas por pontos no quadrante inferior esquerdo do gráfico. Esses casos, muitas vezes associados a setores como transporte público e assistência técnica agropecuária, evidenciam desafios estruturais significativos. As limitações na geração de receitas próprias, aliadas a custos operacionais elevados e dependência de subsídios governamentais, dificultam a sustentabilidade financeira dessas organizações. Além disso, a gestão de empresas com patrimônios líquidos negativos merece atenção especial, pois representa um risco fiscal para o Governo do Distrito Federal, sendo necessário avaliar medidas de reestruturação e melhoria operacional.
 
 A análise reforça a importância de uma governança corporativa sólida e de estratégias diferenciadas para setores mais vulneráveis. A implementação de práticas de gestão eficientes, associada ao controle rigoroso dos custos e à diversificação de receitas, é essencial para alinhar o desempenho financeiro das empresas ao potencial representado por seus patrimônios líquidos. Em última análise, o gráfico destaca a necessidade de intervenções estratégicas em empresas defi
 
 """)	
 
 # Filtrar o dataset e garantir a ordem correta dos dados
-df_filtered = df[(df["Estado"] == "DF") & (df["Ano"] == 2023)].copy()
+df_filteorange = df[(df["Estado"] == "DF") & (df["Ano"] == 2023)].copy()
 
 # Verificar a consistência removendo nulos e resetando o índice
-df_filtered_clean = df_filtered.dropna(subset=["lucros", "PL"]).reset_index(drop=True)
+df_filteorange_clean = df_filteorange.dropna(subset=["lucros", "PL"]).reset_index(drop=True)
 
 # Adicionar colunas para formatação e exibição
-df_filtered_clean["Status"] = df_filtered_clean["lucros"].apply(
+df_filteorange_clean["Status"] = df_filteorange_clean["lucros"].apply(
     lambda lucro: "Lucro" if lucro > 0 else "Prejuízo"
 )
 
 # Adicionar informação de dependência para o hover
-df_filtered_clean["Dependência"] = df_filtered_clean["dep"].apply(
+df_filteorange_clean["Dependência"] = df_filteorange_clean["dep"].apply(
     lambda x: "Dependente" if str(x).upper() == "DEPENDENTE" else "Não Dependente"
 )
 
 # Criar o gráfico de dispersão interativo
 fig = px.scatter(
-    df_filtered_clean,
+    df_filteorange_clean,
     x="PL",
     y="lucros",
     color="Status",
-    size=df_filtered_clean["PL"].abs() / df_filtered_clean["PL"].abs().max() * 50 + 10,  
+    size=df_filteorange_clean["PL"].abs() / df_filteorange_clean["PL"].abs().max() * 50 + 10,  
     labels={
         "PL": "Patrimônio Líquido (R$)",
         "lucros": "Lucro/Prejuízo (R$)",
@@ -781,7 +818,7 @@ st.plotly_chart(fig, use_container_width=True)
 # Adicionar informações complementares
 with st.expander("Ver detalhes dos dados"):
     # Criar tabela com informações organizadas
-    tabela_detalhe = df_filtered_clean[["emp", "PL", "lucros", "Status", "Dependência"]].sort_values(
+    tabela_detalhe = df_filteorange_clean[["emp", "PL", "lucros", "Status", "Dependência"]].sort_values(
         by="PL", ascending=False
     ).copy()
     
@@ -817,34 +854,34 @@ with st.expander("Ver detalhes dos dados"):
     with col1:
         st.metric(
             "Média de Patrimônio Líquido", 
-            f"R$ {df_filtered_clean['PL'].mean():,.2f}"
+            f"R$ {df_filteorange_clean['PL'].mean():,.2f}"
         )
         st.metric(
             "Empresa com maior PL", 
-            df_filtered_clean.loc[df_filtered_clean['PL'].idxmax(), 'emp'],
-            f"R$ {df_filtered_clean['PL'].max():,.2f}"
+            df_filteorange_clean.loc[df_filteorange_clean['PL'].idxmax(), 'emp'],
+            f"R$ {df_filteorange_clean['PL'].max():,.2f}"
         )
     
     with col2:
         st.metric(
             "Média de Lucro/Prejuízo", 
-            f"R$ {df_filtered_clean['lucros'].mean():,.2f}"
+            f"R$ {df_filteorange_clean['lucros'].mean():,.2f}"
         )
         st.metric(
             "Empresa mais lucrativa", 
-            df_filtered_clean.loc[df_filtered_clean['lucros'].idxmax(), 'emp'],
-            f"R$ {df_filtered_clean['lucros'].max():,.2f}"
+            df_filteorange_clean.loc[df_filteorange_clean['lucros'].idxmax(), 'emp'],
+            f"R$ {df_filteorange_clean['lucros'].max():,.2f}"
         )
 
 
-st.subheader("Rentabilidade das empresas em 2023 - (Lucro ou Prejuízo / Patrimônio Líquido)", divider="red")
+st.subheader("Rentabilidade das empresas em 2023 - (Lucro ou Prejuízo / Patrimônio Líquido)", divider="orange")
 
 # Conteúdo específico desta página
 st.write("""
 
 O gráfico abaixo evidencia a rentabilidade das empresas estatais do Distrito Federal em 2023, medida pela relação entre lucro ou prejuízo e patrimônio líquido. Empresas como CEB Participações, CEB Lajeado e CAESB destacaram-se com as maiores rentabilidades, demonstrando eficiência na utilização de seus ativos para gerar retornos financeiros positivos. Esses resultados refletem estratégias de gestão sólidas, otimização de processos operacionais e modelos de negócios ajustados à demanda do mercado. O destaque do setor energético e do saneamento reforça o impacto de serviços essenciais com forte capacidade de geração de receitas, mesmo em um cenário econômico desafiador.
 
-No entanto, o gráfico também expõe pontos críticos relacionados a empresas com rentabilidade negativa, como a DF Gestão de Ativos, que apresentou o desempenho mais preocupante, com valores muito abaixo do esperado. Essa baixa rentabilidade pode ser atribuída a uma combinação de desafios estruturais, falta de estratégias claras de geração de receita e possível subutilização de ativos. Outras empresas com resultados negativos incluem a CODHAB, o Metrô/DF e a CEB Iluminação Pública e Serviços, setores historicamente desafiadores, dada sua dependência de subsídios governamentais e altos custos operacionais. Esses desempenhos deficitários destacam a necessidade de reavaliações estratégicas, redução de ineficiências e implementação de melhorias na gestão.
+No entanto, o gráfico também expõe pontos críticos relacionados a empresas com rentabilidade negativa, como a DF Gestão de Ativos, que apresentou o desempenho mais preocupante, com valores muito abaixo do esperado. Essa baixa rentabilidade pode ser atribuída a uma combinação de desafios estruturais, falta de estratégias claras de geração de receita e possível subutilização de ativos. Outras empresas com resultados negativos incluem a CODHAB, o Metrô/DF e a CEB Iluminação Pública e Serviços, setores historicamente desafiadores, dada sua dependência de subsídios governamentais e altos custos operacionais. Esses desempenhos deficitários destacam a necessidade de reavaliações estratégicas, orangeução de ineficiências e implementação de melhorias na gestão.
 
 A análise geral revela um panorama de contraste entre empresas altamente rentáveis e aquelas em dificuldades financeiras, reforçando a necessidade de políticas diferenciadas para cada caso. Empresas com bom desempenho devem continuar investindo na ampliação de suas operações e inovação, enquanto aquelas com rentabilidade negativa requerem intervenções específicas, como reestruturação, diversificação de receitas e maior eficiência nos custos operacionais. Esses ajustes são essenciais para garantir a sustentabilidade e o impacto positivo das estatais no desenvolvimento econômico e social do Distrito Federal.
 
@@ -869,31 +906,31 @@ SAB - Sociedade de Abastecimento de Brasília
 """)	
 
 # Filtrar o dataframe para incluir apenas o Estado DF e Ano 2023
-df_filtered = df[(df["Estado"] == "DF") & (df["Ano"] == 2023)].copy()
+df_filteorange = df[(df["Estado"] == "DF") & (df["Ano"] == 2023)].copy()
 
 # Remover linhas com valores NaN nas colunas necessárias e PL negativo
-df_filtered = df_filtered.dropna(subset=["lucros", "PL"])
-df_filtered = df_filtered[df_filtered["PL"] > 0]  # Remover empresas com PL negativo ou zero
+df_filteorange = df_filteorange.dropna(subset=["lucros", "PL"])
+df_filteorange = df_filteorange[df_filteorange["PL"] > 0]  # Remover empresas com PL negativo ou zero
 
 # Calcular Rentabilidade (%)
-df_filtered["Rentabilidade (%)"] = (df_filtered["lucros"] / df_filtered["PL"]) * 100
+df_filteorange["Rentabilidade (%)"] = (df_filteorange["lucros"] / df_filteorange["PL"]) * 100
 
 # Adicionar uma coluna para indicar se é lucro ou prejuízo
-df_filtered["Status"] = df_filtered["Rentabilidade (%)"].apply(
+df_filteorange["Status"] = df_filteorange["Rentabilidade (%)"].apply(
     lambda x: "Rentabilidade Positiva" if x >= 0 else "Rentabilidade Negativa"
 )
 
 # Ordenar o dataframe pela rentabilidade
-df_filtered.sort_values(by="Rentabilidade (%)", ascending=True, inplace=True)
+df_filteorange.sort_values(by="Rentabilidade (%)", ascending=True, inplace=True)
 
 # Adicionar informação de dependência para o hover
-df_filtered["Dependência"] = df_filtered["dep"].apply(
+df_filteorange["Dependência"] = df_filteorange["dep"].apply(
     lambda x: "Dependente" if str(x).upper() == "DEPENDENTE" else "Não Dependente"
 )
 
 # Criação do gráfico de barras
 fig = px.bar(
-    df_filtered,
+    df_filteorange,
     x="Rentabilidade (%)",
     y="emp",
     orientation="h",
@@ -991,9 +1028,9 @@ st.plotly_chart(fig, use_container_width=True)
 # Adicionar informações complementares
 with st.expander("📊 Ver detalhes da rentabilidade"):
     # Calcular estatísticas
-    media_rentabilidade = df_filtered["Rentabilidade (%)"].mean()
-    rentabilidade_positiva = df_filtered[df_filtered["Rentabilidade (%)"] > 0]["Rentabilidade (%)"].mean()
-    rentabilidade_negativa = df_filtered[df_filtered["Rentabilidade (%)"] < 0]["Rentabilidade (%)"].mean()
+    media_rentabilidade = df_filteorange["Rentabilidade (%)"].mean()
+    rentabilidade_positiva = df_filteorange[df_filteorange["Rentabilidade (%)"] > 0]["Rentabilidade (%)"].mean()
+    rentabilidade_negativa = df_filteorange[df_filteorange["Rentabilidade (%)"] < 0]["Rentabilidade (%)"].mean()
     
     # Exibir estatísticas
     st.markdown("### Estatísticas de rentabilidade")
@@ -1024,7 +1061,7 @@ with st.expander("📊 Ver detalhes da rentabilidade"):
     
     # Tabela detalhada
     st.markdown("### Dados detalhados")
-    tabela = df_filtered[["emp", "Rentabilidade (%)", "lucros", "PL", "Status", "Dependência"]].copy()
+    tabela = df_filteorange[["emp", "Rentabilidade (%)", "lucros", "PL", "Status", "Dependência"]].copy()
     tabela.columns = ["Empresa", "Rentabilidade (%)", "Lucro/Prejuízo (R$)", "Patrimônio Líquido (R$)", "Status", "Dependência"]
     
     # Ordenar por rentabilidade (maior para menor)
@@ -1052,7 +1089,7 @@ with st.expander("📊 Ver detalhes da rentabilidade"):
     )
 
 
-st.subheader("Rentabilidade média das empresas por setor em 2023 (Lucro ou Prejuízo / Patrimônio Líquido)", divider="red")
+st.subheader("Rentabilidade média das empresas por setor em 2023 (Lucro ou Prejuízo / Patrimônio Líquido)", divider="orange")
 
 # Conteúdo específico desta página
 st.write("""
@@ -1078,18 +1115,18 @@ SAB - Sociedade de Abastecimento de Brasília
 """)	
 
 # Filtrar o dataframe para incluir apenas o Estado DF e Ano 2023
-df_filtered = df[(df["Estado"] == "DF") & (df["Ano"] == 2023)].copy()
+df_filteorange = df[(df["Estado"] == "DF") & (df["Ano"] == 2023)].copy()
 
 # Remover linhas com valores NaN nas colunas necessárias e desconsiderar PL negativo
-df_filtered = df_filtered.dropna(subset=["lucros", "PL", "setor"])
-df_filtered = df_filtered[df_filtered["PL"] > 0]  # Excluir empresas com PL negativo
+df_filteorange = df_filteorange.dropna(subset=["lucros", "PL", "setor"])
+df_filteorange = df_filteorange[df_filteorange["PL"] > 0]  # Excluir empresas com PL negativo
 
 # Calcular Rentabilidade (%)
-df_filtered["Rentabilidade (%)"] = (df_filtered["lucros"] / df_filtered["PL"]) * 100
+df_filteorange["Rentabilidade (%)"] = (df_filteorange["lucros"] / df_filteorange["PL"]) * 100
 
 # Agrupar por setor e calcular a média de rentabilidade e compilar a lista de empresas
 df_grouped = (
-    df_filtered.groupby("setor")
+    df_filteorange.groupby("setor")
     .agg(
         Rentabilidade_medio=("Rentabilidade (%)", "mean"),
         Lucros_total=("lucros", "sum"),
