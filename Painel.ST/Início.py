@@ -68,7 +68,7 @@ page_bg_img = """
 
     [data-testid="stSidebarNav"] span {
 
-        color: #17110a !important;
+        color: #292828 !important;
 
         font-weight: 500 !important;
 
