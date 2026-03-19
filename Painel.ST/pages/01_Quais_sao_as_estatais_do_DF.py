@@ -82,7 +82,7 @@ st.markdown("""
     }
 
     /* 5. TEXTOS GERAIS, LISTAS E PARÁGRAFOS (Resolução da ilegibilidade) */
-    .stMarkdown li, .stMarkdown ol, span {
+    .stMarkdown li, span {
         color: #2F2F2F !important; /* Cinza escuro legível */
         text-align: justify;
         font-family: sans-serif;
