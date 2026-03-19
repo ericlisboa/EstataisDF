@@ -101,7 +101,7 @@ col1, col2 = st.columns(2)
 
 with col1:
     if st.button("1. Quais são as estatais do DF?", use_container_width=True):
-        st.switch_page("pages/01_Quais_sao_as_estatais.py")
+        st.switch_page("pages/01_Quais são as estatais do DF?.py")
     if st.button("2. Como é a governança das empresas?", use_container_width=True):
         st.switch_page("pages/02_Governanca_das_empresas.py")
     if st.button("3. Qual o resultado financeiro das estatais?", use_container_width=True):
