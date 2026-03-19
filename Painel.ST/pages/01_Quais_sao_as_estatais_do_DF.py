@@ -91,6 +91,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
+st.title(":orange[As Empresas Estatais Distritais]")
 st.subheader("Quais são as estatais do DF?", divider="orange")
 
 # Conteúdo específico desta página
