@@ -33,12 +33,41 @@ st.markdown("""
         color: #fb8c00 !important;
     }
     
-    /* Ajuste da cor da linha divisória (divider) para laranja */
+    /* Linha divisória laranja */
     hr {
         border-top-color: #fb8c00 !important;
     }
 
-    /* 3. BOTÕES LARANJAS */
+    /* 3. BARRA LATERAL (IDÊNTICA AO INÍCIO) */
+    [data-testid="stSidebar"] {
+        background-color: #4F4F4F !important; /* Cinza robusto */
+        border-right: 2px solid #fb8c00;
+    }
+
+    /* Cor do texto dos itens do menu lateral */
+    [data-testid="stSidebarNav"] span {
+        color: #FFFFFF !important;
+        font-weight: 500 !important;
+        font-size: 1.05rem !important;
+    }
+
+    /* Cor do ícone ao lado do texto no menu */
+    [data-testid="stSidebarNav"] svg {
+        fill: #FFFFFF !important;
+    }
+
+    /* Destaque para a página selecionada */
+    [data-testid="stSidebarNav"] a[aria-current="page"] {
+        background-color: rgba(251, 140, 0, 0.2) !important;
+        border-radius: 5px;
+    }
+    
+    [data-testid="stSidebarNav"] a[aria-current="page"] span {
+        color: #fb8c00 !important;
+        font-weight: bold !important;
+    }
+
+    /* 4. BOTÕES LARANJAS */
     div.stButton > button {
         background-color: #fb8c00 !important;
         color: #FFFFFF !important;
@@ -46,9 +75,10 @@ st.markdown("""
         font-weight: bold;
     }
 
-    /* 4. TEXTOS GERAIS EM CINZA ESCURO */
-    [data-testid="stWidgetLabel"], .stMarkdown {
-        color: #2F2F2F !important;
+    /* 5. TEXTOS LONGOS (CORRIGINDO ILEGIBILIDADE) */
+    .stMarkdown p, .stWrite {
+        color: #2F2F2F !important; /* Cinza escuro legível */
+        text-align: justify;
     }
 </style>
 """, unsafe_allow_html=True)
