@@ -46,7 +46,7 @@ st.markdown("""
 
     /* Cor do texto dos itens do menu lateral */
     [data-testid="stSidebarNav"] span {
-        color: #FFFFFF !important;
+        color: #363434 !important;
         font-weight: 500 !important;
         font-size: 1.05rem !important;
     }
