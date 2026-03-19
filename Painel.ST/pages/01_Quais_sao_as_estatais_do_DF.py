@@ -80,6 +80,12 @@ st.markdown("""
         color: #2F2F2F !important; /* Cinza escuro legível */
         text-align: justify;
     }
+
+    /* Garante que os números das listas (1, 2, 3...) também fiquem escuros */
+    .stMarkdown li::marker {
+        color: #2F2F2F !important;
+        font-weight: bold;
+    }
 </style>
 """, unsafe_allow_html=True)
 
