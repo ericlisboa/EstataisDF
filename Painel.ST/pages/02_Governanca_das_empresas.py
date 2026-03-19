@@ -91,7 +91,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-st.header("Como é a governança das empresas?", divider="blue")
+st.header("Como é a governança das empresas?", divider="orange")
 
 # Conteúdo específico desta página
 st.write("""
@@ -370,7 +370,7 @@ with st.expander("Ver detalhes das combinações de estruturas de governança"):
 
 
 
-st.subheader("Análise da Presença de Estruturas de Governança por Dependência em 2023", divider="blue")
+st.subheader("Análise da Presença de Estruturas de Governança por Dependência em 2023", divider="orange")
 
 # Conteúdo específico desta página
 st.write("""
@@ -532,7 +532,7 @@ with st.expander("Ver dados detalhados"):
     """)
 
 
-st.subheader("Análise da Rentabilidade Média das Empresas pela Combinação de Estruturas de Governança", divider="blue")
+st.subheader("Análise da Rentabilidade Média das Empresas pela Combinação de Estruturas de Governança", divider="orange")
 
 # Conteúdo específico desta página
 st.write("""
