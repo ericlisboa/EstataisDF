@@ -92,7 +92,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-st.header("Qual o resultado financeiro das estatais para o Governo do DF?", divider="green")
+st.header("Qual o resultado financeiro das estatais para o Governo do DF?", divider="orange")
 
 # Conteúdo específico desta página
 st.write("""
@@ -101,7 +101,7 @@ Nesta seção, de forma geral, pretende-se apurar, em relação aos últimos ano
 
 """)	
 
-st.subheader("Resultado Líquido das Empresas para o Estado em 2023", divider="green")
+st.subheader("Resultado Líquido das Empresas para o Estado em 2023", divider="orange")
 
 st.write("""
 
@@ -306,7 +306,7 @@ else:
                 st.info("Não há empresas com resultado negativo no período.")
 
 
-st.subheader("Resultado Líquido das Empresas para o Estado - acumulado 2020 a 2023", divider="green")
+st.subheader("Resultado Líquido das Empresas para o Estado - acumulado 2020 a 2023", divider="orange")
 
 st.write("""
 
@@ -504,7 +504,7 @@ else:
                 st.info("Não há empresas com saldo negativo no período.")
 
 
-st.subheader("Resultado Líquido para o Estado, por Setor - acumulado 2020 a 2023", divider="green")
+st.subheader("Resultado Líquido para o Estado, por Setor - acumulado 2020 a 2023", divider="orange")
 
 st.write("""
 
@@ -705,7 +705,7 @@ else:
                 st.info("Não há setores com saldo negativo no período.")
 
 
-st.subheader("Resultado Líquido para o Estado Acionista, por Dependência - 2020 a 2023 acumulado", divider="green")
+st.subheader("Resultado Líquido para o Estado Acionista, por Dependência - 2020 a 2023 acumulado", divider="orange")
 
 st.write("""
 
@@ -967,7 +967,7 @@ else:
             st.markdown("---")
 
 
-st.subheader("Resultado Líquido Total para o Estado - acumulado 2020 a 2023", divider="green")
+st.subheader("Resultado Líquido Total para o Estado - acumulado 2020 a 2023", divider="orange")
 
 st.write("""
 
