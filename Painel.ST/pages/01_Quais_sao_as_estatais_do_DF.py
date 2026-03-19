@@ -23,32 +23,27 @@ st.set_page_config(
 
 st.markdown("""
 <style>
-    /* 1. FUNDO BRANCO */
+    /* 1. FUNDO GERAL DA PÁGINA */
     [data-testid="stAppViewContainer"] {
         background-color: #FFFFFF !important;
     }
 
-    /* 2. TÍTULOS E DESTAQUES EM LARANJA (Prioridade Máxima) */
-    h1, h2, h3, h4, h5, h6, [data-testid="stHeader"], .stHeader, strong, b {
+    /* 2. TÍTULOS (H1, H2, H3) E DIVISORES EM LARANJA */
+    h1, h2, h3, h4, h5, h6, [data-testid="stHeader"], .stHeader {
         color: #fb8c00 !important;
     }
     
-    /* Garante que o :orange[] do Streamlit funcione */
-    .stMarkdown [data-testid="stMarkdownContainer"] span {
-        color: #fb8c00 !important;
-    }
-
-    /* Linha divisória laranja */
     hr {
         border-top-color: #fb8c00 !important;
     }
 
-    /* 3. BARRA LATERAL (Idêntica ao Início) */
+    /* 3. BARRA LATERAL (CONFIGURAÇÃO IDÊNTICA AO INÍCIO.PY) */
     [data-testid="stSidebar"] {
-        background-color: #4F4F4F !important;
-        border-right: 2px solid #fb8c00;
+        background-color: #4F4F4F !important; /* Cinza escuro */
+        border-right: 2px solid #fb8c00; /* Linha laranja lateral */
     }
 
+    /* Força Texto e Ícones da Sidebar em BRANCO */
     [data-testid="stSidebarNav"] span {
         color: #FFFFFF !important;
         font-weight: 500 !important;
@@ -58,19 +53,32 @@ st.markdown("""
         fill: #FFFFFF !important;
     }
 
-    /* 4. TEXTOS DE CORPO EM CINZA ESCURO (Específico para parágrafos e listas) */
-    /* Aqui removemos o seletor genérico .stMarkdown para não pintar os títulos de preto */
-    p, li, ol, ul, .stMarkdown p, .stMarkdown li {
+    /* Destaque da página atual no menu lateral */
+    [data-testid="stSidebarNav"] a[aria-current="page"] {
+        background-color: rgba(251, 140, 0, 0.2) !important;
+    }
+    
+    [data-testid="stSidebarNav"] a[aria-current="page"] span {
+        color: #fb8c00 !important;
+        font-weight: bold !important;
+    }
+
+    /* 4. TEXTOS DE CORPO (PARÁGRAFOS E LISTAS) EM CINZA ESCURO */
+    /* Usamos seletores específicos para NÃO afetar a Sidebar */
+    [data-testid="stMarkdownContainer"] p, 
+    [data-testid="stMarkdownContainer"] li, 
+    [data-testid="stMarkdownContainer"] ol {
         color: #2F2F2F !important;
         text-align: justify;
     }
 
-    /* Cor dos números das listas (1, 2, 3...) */
+    /* Cor dos números (1, 2, 3) nas listas */
     li::marker {
         color: #2F2F2F !important;
+        font-weight: bold;
     }
 
-    /* 5. BOTÕES LARANJAS */
+    /* 5. BOTÕES EM LARANJA */
     div.stButton > button {
         background-color: #fb8c00 !important;
         color: #FFFFFF !important;
