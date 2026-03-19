@@ -38,15 +38,15 @@ st.markdown("""
         border-top-color: #fb8c00 !important;
     }
 
-    /* 3. BARRA LATERAL (IDÊNTICA AO INÍCIO) */
+     /* 3. BARRA LATERAL (IDÊNTICA AO INÍCIO) */
     [data-testid="stSidebar"] {
-        background-color: #4F4F4F !important; /* Cinza robusto */
+        background-color: #f5f5f5 !important; /* Cinza robusto */
         border-right: 2px solid #fb8c00;
     }
 
     /* Cor do texto dos itens do menu lateral */
     [data-testid="stSidebarNav"] span {
-        color: #FFFFFF !important;
+        color: #363434 !important;
         font-weight: 500 !important;
         font-size: 1.05rem !important;
     }
