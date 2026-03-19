@@ -28,63 +28,53 @@ st.markdown("""
         background-color: #FFFFFF !important;
     }
 
-    /* 2. TÍTULOS EM LARANJA */
-    h1, h2, h3, h4, h5, h6, [data-testid="stHeader"], .stHeader {
+    /* 2. TÍTULOS E DESTAQUES EM LARANJA (Prioridade Máxima) */
+    h1, h2, h3, h4, h5, h6, [data-testid="stHeader"], .stHeader, strong, b {
         color: #fb8c00 !important;
     }
     
+    /* Garante que o :orange[] do Streamlit funcione */
+    .stMarkdown [data-testid="stMarkdownContainer"] span {
+        color: #fb8c00 !important;
+    }
+
     /* Linha divisória laranja */
     hr {
         border-top-color: #fb8c00 !important;
     }
 
-    /* 3. BARRA LATERAL (IDÊNTICA AO INÍCIO) */
+    /* 3. BARRA LATERAL (Idêntica ao Início) */
     [data-testid="stSidebar"] {
-        background-color: #4F4F4F !important; /* Cinza robusto */
+        background-color: #4F4F4F !important;
         border-right: 2px solid #fb8c00;
     }
 
-    /* Cor do texto dos itens do menu lateral */
     [data-testid="stSidebarNav"] span {
         color: #FFFFFF !important;
         font-weight: 500 !important;
-        font-size: 1.05rem !important;
     }
 
-    /* Cor do ícone ao lado do texto no menu */
     [data-testid="stSidebarNav"] svg {
         fill: #FFFFFF !important;
     }
 
-    /* Destaque para a página selecionada */
-    [data-testid="stSidebarNav"] a[aria-current="page"] {
-        background-color: rgba(251, 140, 0, 0.2) !important;
-        border-radius: 5px;
-    }
-    
-    [data-testid="stSidebarNav"] a[aria-current="page"] span {
-        color: #fb8c00 !important;
-        font-weight: bold !important;
+    /* 4. TEXTOS DE CORPO EM CINZA ESCURO (Específico para parágrafos e listas) */
+    /* Aqui removemos o seletor genérico .stMarkdown para não pintar os títulos de preto */
+    p, li, ol, ul, .stMarkdown p, .stMarkdown li {
+        color: #2F2F2F !important;
+        text-align: justify;
     }
 
-    /* 4. BOTÕES LARANJAS */
+    /* Cor dos números das listas (1, 2, 3...) */
+    li::marker {
+        color: #2F2F2F !important;
+    }
+
+    /* 5. BOTÕES LARANJAS */
     div.stButton > button {
         background-color: #fb8c00 !important;
         color: #FFFFFF !important;
         border: none;
-        font-weight: bold;
-    }
-
-/* 5. TEXTOS GERAIS, LISTAS E PARÁGRAFOS (Resolução da ilegibilidade) */
-    .stMarkdown p, .stMarkdown li, .stMarkdown ol, .stMarkdown ul, span {
-        color: #2F2F2F !important; /* Cinza escuro legível */
-        text-align: justify;
-        font-family: sans-serif;
-    }
-
-    /* Garante que os números das listas (1, 2, 3...) também fiquem escuros */
-    .stMarkdown li::marker {
-        color: #2F2F2F !important;
         font-weight: bold;
     }
 </style>
