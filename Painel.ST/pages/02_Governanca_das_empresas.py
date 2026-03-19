@@ -61,13 +61,13 @@ st.write("""
 
 A governança corporativa é essencial para as empresas, pois proporciona uma estrutura de regras, práticas e processos que orientam a direção e o controle delas. Geralmente, a governança efetiva leva a uma melhor tomada de decisões, maior transparência, e maior confiança dos investidores e do público em geral. Para estatais, particularmente, a boa governança assegura que as práticas de gestão estejam alinhadas com os interesses públicos e em conformidade com as políticas governamentais.
 
-**:[Conselho de Administração]**  
+**Conselho de Administração**  
 O Conselho de Administração é um componente central da governança corporativa, responsável por definir a direção estratégica da empresa. Composto por membros que trazem uma diversidade de experiências e perspectivas, este conselho tem a tarefa de supervisionar as operações e garantir que a gestão esteja trabalhando para alcançar os interesses dos acionistas e outros stakeholders. Ele fornece orientação sobre grandes decisões estratégicas e avalia o desempenho da equipe de gestão.
 
-**:[Conselho Fiscal]**  
+**Conselho Fiscal**  
 O Conselho Fiscal tem como principal missão a fiscalização das responsabilidades financeiras e de contabilidade da empresa. Ele funciona como uma salvaguarda independente, garantindo que os gastos sejam apropriados e que as práticas contábeis estejam em conformidade com normas e regulamentos. Ao fazer isso, ele reduz os riscos de fraudes e promove a transparência nos relatórios financeiros, reforçando a confiança dos acionistas e do público.
 
-**:[Comitê de Auditoria]**  
+**Comitê de Auditoria**  
 O Comitê de Auditoria trabalha em estreita colaboração com o Conselho Fiscal, desempenhando um papel crucial no fortalecimento dos controles internos da empresa. Este comitê é responsável por revisar e supervisionar os processos de auditoria interna e externa, além de assegurar que a empresa adote práticas de gerenciamento de riscos eficazes. Ao identificar e abordar potenciais problemas antes que se tornem significativos, o Comitê de Auditoria contribui para a saúde financeira sustentável da empresa.
 
 Em conjunto, esses componentes de governança fortalecem a resiliência operativa e financeira da empresa, alinhando suas atividades com as melhores práticas de mercado e regulatórias. Eles formam um sistema de freios e contrapesos que, quando bem implementado, maximiza o valor para acionistas e outros interessados, ao mesmo tempo que mitiga riscos potenciais.
