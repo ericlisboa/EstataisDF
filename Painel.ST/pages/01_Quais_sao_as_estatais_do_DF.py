@@ -21,7 +21,56 @@ st.set_page_config(
     layout="wide"
 )
 
-st.header("Quais são as estatais do DF?", divider="green")
+st.markdown("""
+<style>
+    /* 1. FUNDO BRANCO */
+    [data-testid="stAppViewContainer"] {
+        background-color: #FFFFFF !important;
+    }
+
+    /* 2. TÍTULOS EM LARANJA */
+    h1, h2, h3, h4, h5, h6, [data-testid="stHeader"], .stHeader {
+        color: #fb8c00 !important;
+    }
+    
+    /* Ajuste da cor da linha divisória (divider) para laranja */
+    hr {
+        border-top-color: #fb8c00 !important;
+    }
+
+    /* 3. BOTÕES LARANJAS */
+    div.stButton > button {
+        background-color: #fb8c00 !important;
+        color: #FFFFFF !important;
+        border: none;
+        font-weight: bold;
+    }
+
+    /* 4. TEXTOS GERAIS EM CINZA ESCURO */
+    [data-testid="stWidgetLabel"], .stMarkdown {
+        color: #2F2F2F !important;
+    }
+</style>
+""", unsafe_allow_html=True)
+
+st.header("Quais são as estatais do DF?", divider="orange")
+
+# --- TEXTO DE INTRODUÇÃO COM COR CONTROLADA ---
+texto_introducao = """
+<div style="color: #2F2F2F !important; font-size: 1.1rem; line-height: 1.6; text-align: justify;">
+No ano de 2023, o Distrito Federal possuía 26 empresas estatais ativas. Esse número permaneceu estável em relação aos anos de 2021 e 2022. Já em 2020, o DF contava com 22 estatais, evidenciando um aumento no quantitativo dessas instituições ao longo do período analisado.
+<br><br>
+A expansão do número de empresas ocorreu devido à criação de quatro novas estatais ligadas ao setor energético, todas pertencentes ao grupo CEB (Companhia Energética de Brasília), a saber:
+<ol>
+    <li><b>CEB Geração</b> – Responsável pela produção de energia elétrica...</li>
+    <li><b>CEB Iluminação Pública e Serviços</b> – Voltada à gestão...</li>
+    <li><b>CEB Lajeado</b> – Criada para atuação específica...</li>
+    <li><b>CEB Participações</b> – Destinada à administração...</li>
+</ol>
+... (restante do seu texto formatado similarmente dentro da div) ...
+</div>
+"""
+st.markdown(texto_introducao, unsafe_allow_html=True)
 
 # Conteúdo específico desta página
 st.write("""
@@ -46,7 +95,7 @@ A análise do comportamento do número de estatais no DF ao longo do tempo permi
 
 """)	
 
-st.subheader("Empresas do Distrito Federal em 2023", divider="green")
+st.subheader("Empresas do Distrito Federal em 2023", divider="orange")
 
 # Filter the dataset for companies located in Distrito Federal (DF), and from the year 2023
 df_2023_df_companies = df[(df["Estado"] == "DF") & (df["Ano"] == 2023)].copy()
