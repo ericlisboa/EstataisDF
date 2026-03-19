@@ -55,7 +55,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-st.header("Comparativo com outros Estados", divider="violet")
+st.header("Comparativo com outros Estados", divider="red")
 
 # Conteúdo específico desta página
 st.write("""
@@ -71,7 +71,7 @@ Por fim, o quarto gráfico aborda o Resultado Líquido das Empresas para o Estad
 """)	
 
 
-st.subheader("Total de empresas por Estado, por ano e por setor", divider="violet")
+st.subheader("Total de empresas por Estado, por ano e por setor", divider="red")
 
 # Conteúdo específico desta página
 st.write("""
@@ -171,7 +171,7 @@ else:
             mime="image/png"
         )
 
-st.subheader("Resultado Líquido das Empresas para o Estado Acionista por Estado e por ano", divider="violet")
+st.subheader("Resultado Líquido das Empresas para o Estado Acionista por Estado e por ano", divider="red")
 
 # Conteúdo específico desta página
 st.write("""
@@ -448,7 +448,7 @@ else:
 
 
 
-st.subheader("Resultado Líquido das Empresas para o Estado Acionista por Estado, por ano e por setor", divider="violet")
+st.subheader("Resultado Líquido das Empresas para o Estado Acionista por Estado, por ano e por setor", divider="red")
 
 # Conteúdo específico desta página
 st.write("""
@@ -619,7 +619,7 @@ else:
 
 
 
-st.subheader("Resultado Líquido das Empresas para o Estado Acionista por Estado, por ano e por dependência", divider="violet")
+st.subheader("Resultado Líquido das Empresas para o Estado Acionista por Estado, por ano e por dependência", divider="red")
 
 # Conteúdo específico desta página
 st.write("""
@@ -636,7 +636,7 @@ A presença de uma categoria de dados não informados, indicada em cinza, levant
 
 """)	
 
-st.subheader("Resultado Líquido das Empresas para o Estado Acionista por Estado, por ano e por dependência", divider="violet")
+st.subheader("Resultado Líquido das Empresas para o Estado Acionista por Estado, por ano e por dependência", divider="red")
 
 # Conteúdo específico desta página
 st.write("""
