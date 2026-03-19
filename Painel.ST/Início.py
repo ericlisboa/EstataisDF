@@ -12,56 +12,53 @@ st.set_page_config(
 # 2. DEFINIÇÃO DE CAMINHOS (Essencial estar aqui em cima para evitar o NameError)
 base_path = os.path.dirname(__file__)
 
-# 3. # CSS para cores customizadas: Botões Laranjas, Sidebar Cinza e Títulos Laranjas
+# 3. CSS para Sidebar Profissional e Títulos Laranjas
 page_bg_img = """
 <style>
-    /* 1. Fundo do App e Containers principais */
+    /* 1. FUNDO DO APP */
     [data-testid="stAppViewContainer"] {
         background-color: #FFFFFF !important;
     }
-    .main .block-container {
-        background-color: #FFFFFF;
-    }
 
-    /* 2. Títulos em Laranja (Pergunta 3) */
+    /* 2. TÍTULOS PRINCIPAIS (Laranja) */
     h1, h2, h3, h4, h5, h6, [data-testid="stHeader"] {
         color: #fb8c00 !important;
     }
-    
-    /* Forçar o texto da introdução e parágrafos para preto para legibilidade */
-    p, span, .stMarkdown p {
-        color: #1E1E1E !important;
-    }
 
-    /* 3. Barra Lateral: Fundo Cinza Médio e Letras Brancas (Pergunta 2) */
+    /* 3. BARRA LATERAL (A área circulada na foto) */
     [data-testid="stSidebar"] {
-        background-color: #a8a7a7 !important; /* Cinza médio */
+        background-color: #4F4F4F !important; /* Um cinza mais robusto */
+        border-right: 2px solid #fb8c00; /* Linha sutil laranja para separar */
     }
-    [data-testid="stSidebar"] [data-testid="stMarkdownContainer"] p, 
-    [data-testid="stSidebar"] span, 
-    [data-testid="stSidebar"] label {
-        color: #FFFFFF !important; /* Letras brancas na sidebar */
-     }
 
-    /* 4. Botões: Fundo Laranja e Letras Brancas (Pergunta 1) */
-    /* Isso afetará todos os botões, incluindo o do item 6 */
+    /* Cor do texto dos itens do menu lateral */
+    [data-testid="stSidebarNav"] span {
+        color: #FFFFFF !important;
+        font-weight: 500 !important;
+        font-size: 1.05rem !important;
+    }
+
+    /* Cor do ícone ao lado do texto no menu */
+    [data-testid="stSidebarNav"] svg {
+        fill: #FFFFFF !important;
+    }
+
+    /* Destaque para a página que está selecionada no momento */
+    [data-testid="stSidebarNav"] a[aria-current="page"] {
+        background-color: rgba(251, 140, 0, 0.2) !important; /* Fundo laranja clarinho */
+        border-radius: 5px;
+    }
+    
+    [data-testid="stSidebarNav"] a[aria-current="page"] span {
+        color: #fb8c00 !important; /* Texto laranja na página atual */
+        font-weight: bold !important;
+    }
+
+    /* 4. BOTÕES LARANJAS (Para manter o padrão) */
     div.stButton > button {
         background-color: #fb8c00 !important;
         color: #FFFFFF !important;
         border: none;
-        border-radius: 5px;
-    }
-    
-    /* Efeito ao passar o mouse no botão (hover) */
-    div.stButton > button:hover {
-        background-color: #e67e22 !important;
-        color: #FFFFFF !important;
-        border: none;
-    }
-
-    /* Ajuste do Divider */
-    hr {
-        border-color: #fb8c00 !important;
     }
 </style>
 """
