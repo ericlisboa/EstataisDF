@@ -90,21 +90,45 @@ if pg.title == "🏠 Início":
 
     st.subheader("As informações deste painel foram organizadas nas seguintes seções:", divider="orange")
     
-    col1, col2 = st.columns(2)
-    with col1:
-        if st.button("1. Quais são as estatais do DF?", use_container_width=True):
-            st.switch_page("pages/01_Quais_sao_as_estatais_do_DF.py")
-        if st.button("2. Como é a governança das empresas?", use_container_width=True):
-            st.switch_page("pages/02_Governanca_das_empresas.py")
-        if st.button("3. Qual o resultado financeiro das estatais?", use_container_width=True):
-            st.switch_page("pages/03_Resultado_financeiro_estatais.py")
-    with col2:
-        if st.button("4. Qual o resultado para o Governo do DF?", use_container_width=True):
-            st.switch_page("pages/04_Resultado_financeiro_governo_df.py")
-        if st.button("5. Comparativo com outros Estados", use_container_width=True):
-            st.switch_page("pages/05_Comparativo_outros_estados.py")
-        if st.button("6. Boletim das Estatais (Download)", use_container_width=True):
-            st.switch_page("pages/06_Boletim_Completo.py")
+with col1:
+
+    if st.button("1. Quais são as estatais do DF?", use_container_width=True):
+
+        # Chama o arquivo limpo no GitHub
+
+        st.switch_page("pages/01_Quais_sao_as_estatais_do_DF.py")
+
+        
+
+    if st.button("2. Como é a governança das empresas?", use_container_width=True):
+
+        st.switch_page("pages/02_Governanca_das_empresas.py")
+
+        
+
+    if st.button("3. Qual o resultado financeiro das estatais?", use_container_width=True):
+
+        st.switch_page("pages/03_Resultado_financeiro_estatais.py")
+
+
+
+with col2:
+
+    if st.button("4. Qual o resultado para o Governo do DF?", use_container_width=True):
+
+        st.switch_page("pages/04_Resultado_financeiro_governo_df.py")
+
+        
+
+    if st.button("5. Comparativo com outros Estados", use_container_width=True):
+
+        st.switch_page("pages/05_Comparativo_outros_estados.py")
+
+        
+
+    if st.button("6. Boletim das Estatais (Download)", use_container_width=True):
+
+        st.switch_page("pages/06_Boletim_Completo.py")
 
 else:
     # Isso executa as outras páginas quando clicadas na barra lateral
